@@ -1,0 +1,347 @@
+<title>Qué cargar primero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
+
+<style>
+:root{
+  --fucsia:#E6028B; --fucsia-btn:#D1017E; --amarillo:#F4C721; --celeste:#1CA2DE;
+  --tinta:#16161A; --sup:#FFFFFF; --papel:#FDF3F8; --humo:#6B6470; --linea:#EBDFE6;
+  --fondo:#FBF7F9; --texto:#16161A; --sobre-calido:#16161A;
+  --propio:#1B7A47; --propio-bg:#E4F4EB;
+  --reventa:#8A5A00; --reventa-bg:#FCF0D2;
+  --ft:"Poppins","Nunito Sans",system-ui,sans-serif;
+  --fb:"Nunito Sans","Work Sans",system-ui,sans-serif;
+  --r:14px; --max:940px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --fucsia:#FF3DA5; --fucsia-btn:#FF69B8; --amarillo:#F4C721; --celeste:#45BEF2;
+    --tinta:#261F2E; --sup:#191521; --papel:#1E1926; --humo:#A79FAE; --linea:#332B3B;
+    --fondo:#121016; --texto:#F3EDF2;
+    --propio:#6FD79E; --propio-bg:#14301F;
+    --reventa:#F0C44C; --reventa-bg:#332813;
+  }
+}
+:root[data-theme="dark"]{
+  --fucsia:#FF3DA5; --fucsia-btn:#FF69B8; --amarillo:#F4C721; --celeste:#45BEF2;
+  --tinta:#261F2E; --sup:#191521; --papel:#1E1926; --humo:#A79FAE; --linea:#332B3B;
+  --fondo:#121016; --texto:#F3EDF2;
+  --propio:#6FD79E; --propio-bg:#14301F;
+  --reventa:#F0C44C; --reventa-bg:#332813;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--texto);
+  font-family:var(--fb);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--ft);margin:0;line-height:1.15;text-wrap:balance}
+p,ul{margin:0}
+:focus-visible{outline:2px solid var(--fucsia-btn);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+/* --- portada --- */
+.top{background:#E6028B;color:#fff;padding:52px 0 46px}
+.top .eyebrow{font-family:var(--ft);font-size:11.5px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:#F4C721;margin-bottom:16px}
+.top h1{font-size:clamp(32px,5.5vw,46px);font-weight:800;letter-spacing:-.025em}
+.top p{margin-top:16px;font-size:17px;max-width:56ch;opacity:.95}
+
+.aviso{background:var(--amarillo);color:var(--sobre-calido);padding:20px 0}
+.aviso .wrap{display:flex;gap:14px;align-items:flex-start}
+.aviso svg{flex:none;margin-top:3px}
+.aviso b{font-family:var(--ft);font-weight:700}
+.aviso p{font-size:14.5px;line-height:1.55}
+
+/* --- regla --- */
+.regla{background:var(--sup);border:2px solid var(--fucsia);border-radius:var(--r);
+  padding:26px 28px;margin:38px 0 10px}
+.regla h2{font-size:20px;font-weight:700;color:var(--fucsia-btn);margin-bottom:10px}
+.regla p{font-size:16.5px}
+
+section{padding:34px 0}
+.sec-t{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.sec-t h2{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.sec-t span{font-size:14px;color:var(--humo);font-weight:600}
+.sec-d{color:var(--humo);font-size:15.5px;margin-bottom:24px;max-width:62ch}
+
+/* --- fichas --- */
+.lista{display:flex;flex-direction:column;gap:14px}
+.item{background:var(--sup);border:1px solid var(--linea);border-radius:var(--r);
+  padding:20px 22px;display:grid;grid-template-columns:44px 1fr;gap:18px}
+.rank{font-family:var(--ft);font-weight:800;font-size:20px;color:var(--fucsia-btn);
+  font-variant-numeric:tabular-nums;line-height:1.3}
+.item h3{font-size:18.5px;font-weight:700;margin-bottom:4px}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 11px}
+.chip{font-family:var(--ft);font-size:11px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.c-propio{background:var(--propio-bg);color:var(--propio)}
+.c-reventa{background:var(--reventa-bg);color:var(--reventa)}
+.c-temp{background:var(--papel);color:var(--fucsia-btn);border:1px solid var(--linea)}
+.item p{font-size:15px;color:var(--humo)}
+.item p strong{color:var(--texto)}
+.quien{font-size:13.5px;margin-top:9px;color:var(--texto)}
+.quien b{font-family:var(--ft);font-size:11px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--humo);display:block;margin-bottom:2px}
+@media (max-width:560px){.item{grid-template-columns:1fr;gap:8px}}
+
+/* --- no cargar --- */
+.no{background:var(--papel);border-left:4px solid var(--fucsia);border-radius:0 var(--r) var(--r) 0;
+  padding:24px 26px}
+.no h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.no ul{padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--humo)}
+.no ul strong{color:var(--texto)}
+.no .cierre{margin-top:16px;font-size:15.5px;color:var(--texto);font-weight:600}
+
+/* --- calendario --- */
+.cal{display:flex;flex-direction:column;gap:2px;border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--linea)}
+.mes{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 18px;background:var(--sup);
+  align-items:baseline}
+.mes.pico{background:var(--amarillo);color:var(--sobre-calido)}
+.mes b{font-family:var(--ft);font-size:13px;font-weight:700;letter-spacing:.04em}
+.mes span{font-size:14.5px;color:var(--humo)}
+.mes.pico span{color:var(--sobre-calido);opacity:.85}
+.mes.pico b::after{content:" · PICO";font-size:10px;letter-spacing:.12em}
+@media (max-width:560px){.mes{grid-template-columns:1fr;gap:3px}}
+
+/* --- cierre --- */
+.necesito{background:var(--tinta);color:#F3EDF2;border-radius:var(--r);padding:30px 32px}
+.necesito h2{font-size:22px;font-weight:800;color:#fff;margin-bottom:14px}
+.necesito p{font-size:15.5px;color:#CFC6CE}
+.necesito ol{margin:16px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:9px;
+  font-size:15.5px;color:#CFC6CE}
+.necesito ol strong{color:#fff}
+.pie{text-align:center;color:var(--humo);font-size:13.5px;padding:34px 0 44px}
+</style>
+
+<div class="top">
+  <div class="wrap">
+    <p class="eyebrow">Taxnara Diseños · Catálogo</p>
+    <h1>Qué cargar primero</h1>
+    <p>Quince productos que hoy no están en la tienda, ordenados por lo que más
+       conviene sumar: demanda real, margen y si sale de tu taller o no.</p>
+  </div>
+</div>
+
+<div class="aviso">
+  <div class="wrap">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v6" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="currentColor"/>
+    </svg>
+    <p><b>Esto no salió de tus páginas.</b> El proxy de red bloquea
+      regalosconlogos.com, muy.promo, Instagram y TikTok: nunca pude abrirlas. Esta lista
+      sale del rubro de esas plataformas, de lo que ya producís, del relevamiento de
+      precios que hicimos y de la estacionalidad argentina. No inventé tus productos:
+      te propongo cuáles sumar.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="regla">
+    <h2>La regla que ordena todo</h2>
+    <p>Tu margen está en lo que <strong>personalizás vos</strong>. Cada producto que cargás
+      y no producís te obliga a comprar, stockear y responder por algo que no controlás —
+      y ahí competís contra la plataforma que te lo vende. La tienda tiene que mostrar
+      <strong>lo que hacés</strong>, no todo lo que podrías conseguir.</p>
+  </div>
+</div>
+
+<section class="wrap">
+  <div class="sec-t"><h2>Cargar ya</h2><span>8 productos</span></div>
+  <p class="sec-d">Alta demanda, los producís vos y tienen buen margen. Los primeros tres
+    son el hueco más grande que tiene hoy el catálogo.</p>
+
+  <div class="lista">
+    <article class="item">
+      <div class="rank">1</div>
+      <div>
+        <h3>Mate + bombilla personalizado</h3>
+        <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Todo el año</span></div>
+        <p>El regalo empresarial <strong>número uno en Argentina</strong>, y no está en tu
+          catálogo. Superficie chica, insumo barato, sublimable o grabable: es de los
+          mejores márgenes que vas a tener. Si cargás un solo producto de esta lista,
+          que sea este.</p>
+        <p class="quien"><b>Quién lo compra</b>Empresas para regalar, egresados, particulares</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rank">2</div>
+      <div>
+        <h3>Set matero completo</h3>
+        <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Nov – Dic</span></div>
+        <p>Mate, bombilla, yerbera, azucarera y bolso, todo con el mismo logo y en caja.
+          <strong>Ticket alto en un solo pedido</strong> y el combo se vende mucho mejor que
+          las piezas sueltas. Es el producto de fin de año por excelencia.</p>
+        <p class="quien"><b>Quién lo compra</b>Empresas para fin de año, aniversarios, jubilaciones</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rank">3</div>
+      <div>
+        <h3>Bolso matero / matera</h3>
+        <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Todo el año</span></div>
+        <p>Sublimación total sobre una <strong>superficie grande</strong>: el logo se luce como
+          en pocos productos. Se vende solo o dentro del set.</p>
+        <p class="quien"><b>Quién lo compra</b>Empresas, clubes, particulares</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rank">4</div>
+      <div>
+        <h3>Talles de niño en remera y buzo</h3>
+        <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Feb – Mar</span></div>
+        <p><strong>No es un producto nuevo: son variantes de lo que ya tenés cargado.</strong>
+          Agregar talles 4 al 14 no te cuesta nada y te abre colegios, jardines, escuelas
+          de danza y clubes infantiles. Es lo más rápido de toda la lista — se hace en
+          diez minutos.</p>
+        <p class="quien"><b>Quién lo compra</b>Colegios, jardines, escuelas de danza, clubes infantiles</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rank">5</div>
+      <div>
+        <h3>Delantal personalizado</h3>
+        <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Oct · Mar</span></div>
+        <p>Bordado o DTF sobre una prenda de trabajo que <strong>se repone</strong>: el cliente
+          vuelve. Doble temporada, gastronomía todo el año y un pico fuerte para el
+          Día de la Madre.</p>
+        <p class="quien"><b>Quién lo compra</b>Gastronomía, jardines de infantes, peluquerías, regalo Día de la Madre</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rank">6</div>
+      <div>
+        <h3>Tote bag / bolsa de tela</h3>
+        <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Todo el año</span></div>
+        <p>DTF sobre insumo barato, y <strong>siempre se pide por cantidad</strong>. Además la
+          demanda crece sola a medida que los comercios reemplazan la bolsa plástica.
+          Ideal para ferias, eventos y ecommerce.</p>
+        <p class="quien"><b>Quién lo compra</b>Comercios, ferias, eventos, marcas de ecommerce</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rank">7</div>
+      <div>
+        <h3>Llavero sublimado o de acrílico</h3>
+        <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Todo el año</span></div>
+        <p>El <strong>ticket más bajo del catálogo</strong>, y eso es exactamente para lo que
+          sirve: que alguien te compre por primera vez sin pensarlo. Después vuelve por
+          algo más caro. También se vende por volumen como souvenir.</p>
+        <p class="quien"><b>Quién lo compra</b>Souvenirs de cumpleaños y egresados, eventos, primera compra</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rank">8</div>
+      <div>
+        <h3>Banderín y bandera de club</h3>
+        <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Feb – Mar</span></div>
+        <p>Sublimación total, sin límite de colores, sobre un segmento que <strong>ya
+          trabajás</strong>. Al club que le hacés las camisetas le podés vender la bandera
+          en el mismo pedido.</p>
+        <p class="quien"><b>Quién lo compra</b>Clubes, escuelas, hinchadas, actos escolares</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-t"><h2>Segunda tanda</h2><span>7 productos</span></div>
+  <p class="sec-d">Buenos productos, pero más estacionales o de menor margen. Cargalos
+    cuando los ocho de arriba estén con foto y precio.</p>
+
+  <div class="lista">
+    <article class="item"><div class="rank">9</div><div>
+      <h3>Toalla y toallón sublimado</h3>
+      <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Dic – Feb</span></div>
+      <p>Fuerte en verano y en clubes con pileta. Fuera de temporada casi no se mueve.</p></div></article>
+
+    <article class="item"><div class="rank">10</div><div>
+      <h3>Vaso térmico y vaso plástico</h3>
+      <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Dic – Mar</span></div>
+      <p>Complementa mate y termo. Bueno para eventos y para cumpleaños.</p></div></article>
+
+    <article class="item"><div class="rank">11</div><div>
+      <h3>Almanaque personalizado</h3>
+      <div class="chips"><span class="chip c-reventa">Depende del proveedor</span><span class="chip c-temp">Nov – Dic</span></div>
+      <p>Solo dos meses al año, pero en esos dos meses se vende por cantidad a empresas.
+        Conviene ofrecerlo junto al set matero.</p></div></article>
+
+    <article class="item"><div class="rank">12</div><div>
+      <h3>Cuaderno y anotador con logo</h3>
+      <div class="chips"><span class="chip c-reventa">Depende del proveedor</span><span class="chip c-temp">Feb · Nov</span></div>
+      <p>Doble ventana: vuelta al cole y regalo empresarial. Margen menor que el textil.</p></div></article>
+
+    <article class="item"><div class="rank">13</div><div>
+      <h3>Gorro de verano / piluso</h3>
+      <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Nov – Feb</span></div>
+      <p>Misma técnica que la gorra, que ya tenés cargada. Costo bajo de sumar.</p></div></article>
+
+    <article class="item"><div class="rank">14</div><div>
+      <h3>Lanyard y credencial</h3>
+      <div class="chips"><span class="chip c-reventa">Depende del proveedor</span><span class="chip c-temp">Todo el año</span></div>
+      <p>Congresos, eventos y empresas. Pedido chico pero repetido.</p></div></article>
+
+    <article class="item"><div class="rank">15</div><div>
+      <h3>Campera de egresados</h3>
+      <div class="chips"><span class="chip c-propio">Lo producís vos</span><span class="chip c-temp">Mar – Jun</span></div>
+      <p>Ticket más alto que el buzo. Varias promos piden campera en vez de buzo y hoy
+        no la tenés en la tienda.</p></div></article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-t"><h2>Lo que no conviene cargar</h2></div>
+  <p class="sec-d">Está en esas plataformas y es tentador sumarlo. No lo hagas.</p>
+  <div class="no">
+    <h3>Dejalo en las plataformas y linkealas desde la web</h3>
+    <ul>
+      <li><strong>Tecnología importada:</strong> pen drives, cargadores, auriculares, power
+        banks. No los personalizás vos, el margen es bajo y la garantía es de otro.</li>
+      <li><strong>Artículos sin superficie propia:</strong> paraguas, relojes, herramientas.
+        Si no le podés poner tu terminación, no es tu producto.</li>
+      <li><strong>Catálogos enteros:</strong> volcar trescientos artículos de merchandising
+        hace que se pierdan los quince que sí te dan plata.</li>
+    </ul>
+    <p class="cierre">Un catálogo corto y bien fotografiado vende más que uno largo y genérico.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-t"><h2>El año, mes a mes</h2></div>
+  <p class="sec-d">Cargá cada producto <strong>un mes antes</strong> de su temporada, no durante.</p>
+  <div class="cal">
+    <div class="mes"><b>Enero – Febrero</b><span>Clubes: camisetas, banderas, botellas · Verano: toallas, gorros</span></div>
+    <div class="mes pico"><b>Marzo – Junio</b><span>Egresados: buzos, camperas, kits · Vuelta al cole: delantales de jardín, cuadernos</span></div>
+    <div class="mes"><b>Junio</b><span>Día del Padre: mates, termos, sets materos</span></div>
+    <div class="mes"><b>Agosto – Septiembre</b><span>Uniformes de empresa para el segundo semestre</span></div>
+    <div class="mes"><b>Octubre</b><span>Día de la Madre: delantales, tazas, almohadones</span></div>
+    <div class="mes pico"><b>Noviembre – Diciembre</b><span>Regalos empresariales: sets materos, almanaques, termos, cajas</span></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="necesito">
+    <h2>Qué necesito de vos para cargarlos</h2>
+    <p>Con esto los cargo con la misma estructura que los 22 que ya están: descripción,
+      SEO, peso, medidas, categorías, imagen y precio.</p>
+    <ol>
+      <li><strong>El CSV o Excel</strong> de regalosconlogos y muy.promo, si esas plataformas
+        te dejan exportarlo. Es el camino más rápido y trae todo junto.</li>
+      <li><strong>O capturas</strong> de las páginas de catálogo. Con eso armo las fichas a mano.</li>
+      <li><strong>Tu costo</strong> de cada producto. Sin eso no puedo ponerle un precio que
+        te deje margen, solo uno que se parezca al del mercado.</li>
+      <li><strong>Una foto por producto</strong>, aunque sea del celular. Las ilustraciones
+        actuales son provisorias.</li>
+    </ol>
+  </div>
+</section>
+
+<p class="pie">Taxnara Diseños · Saujil, Pomán, Catamarca · Agosto 2026</p>

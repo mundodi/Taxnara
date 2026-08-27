@@ -23,36 +23,40 @@ import os
 # importación no falle. Reemplazalos por los precios reales antes de publicar.
 # ---------------------------------------------------------------------------
 PRECIOS = {
-    # int          -> mismo precio para todas las variantes
-    # dict         -> precio por valor de la PRIMERA propiedad
-    # None         -> sin precio; la tienda muestra "Consultar"
-    "remera-algodon-personalizada":      24900,
-    "remera-oversize-personalizada":     32900,
-    "buzo-canguro-personalizado":        58900,
-    "buzo-cuello-redondo-personalizado": 54900,
-    "campera-rompevientos-bordada":      79900,
-    "chomba-pique-bordada":              44900,
-    "gorra-gabardina-bordada":           21900,
-    "taza-ceramica-sublimada":            9900,
-    "taza-magica-sublimada":             13900,
-    "almohadon-sublimado-40x40":         18900,
-    "mouse-pad-personalizado":           {"Estándar 22×18": 8900, "Gamer 70×30": 16900},
-    "botella-deportiva-personalizada":   19900,
-    "termo-acero-personalizado":         {"750 ml": 38900, "1 litro": 46900},
-    "kit-egresados-buzo-bordado":        69900,
-    "indumentaria-laboral-bordada":      None,
-    "camiseta-club-sublimada":           None,
-    "set-regaleria-empresarial":         {"Taza + mouse pad": 34900,
-                                          "Termo + botella": 58900,
-                                          "Taza + almohadón": 42900},
-    "bordado-de-logo":                   {"Hasta 8 cm": 7900, "Hasta 15 cm": 12900,
-                                          "Espalda completa": 24900},
-    "estampado-dtf":                     {"A5": 6900, "A4": 10900, "A3": 17900},
-    "vinilo-textil":                     {"Nombre o número": 5900, "Logo simple": 8900,
-                                          "Logo dos colores": 12900},
-    "diseno-y-vectorizacion-de-logo":    {"Vectorizar logo existente": 19900,
-                                          "Rediseño de logo": 44900,
-                                          "Logo desde cero": 79900},
+    # Sincronizado con la tienda el 27/08/2026. Los valores salen del
+    # relevamiento de mercado de docs/12-precios-y-mercado.md.
+    # int  -> mismo precio para todas las variantes
+    # dict -> precio por valor de la PRIMERA propiedad
+    # None -> sin precio; la tienda muestra "Consultar"
+    "remera-algodon-personalizada":      22900,
+    "remera-oversize-personalizada":     29900,
+    "buzo-canguro-personalizado":        52900,
+    "buzo-cuello-redondo-personalizado": 42900,
+    "campera-rompevientos-bordada":      74900,
+    "chomba-pique-bordada":              38900,
+    "gorra-gabardina-bordada":           16900,
+    "taza-ceramica-sublimada":            8900,
+    "taza-magica-sublimada":             12900,
+    "almohadon-sublimado-40x40":         17900,
+    "mouse-pad-personalizado":           {"Estándar 22×18": 7900, "Gamer 70×30": 15900},
+    "botella-deportiva-personalizada":   18900,
+    "termo-acero-personalizado":         {"750 ml": 28900, "1 litro": 35900},
+    "kit-egresados-buzo-bordado":        52900,
+    "indumentaria-laboral-bordada":      {"Chomba": 36900, "Camisa": 42900,
+                                          "Buzo": 46900, "Campera": 69900},
+    "camiseta-club-sublimada":           {"8": 21900, "10": 21900, "12": 23900, "14": 23900,
+                                          "S": 24900, "M": 24900, "L": 24900, "XL": 24900},
+    "set-regaleria-empresarial":         {"Taza + mouse pad": 15900,
+                                          "Termo + botella": 43900,
+                                          "Taza + almohadón": 24900},
+    "bordado-de-logo":                   {"Hasta 8 cm": 6900, "Hasta 15 cm": 11900,
+                                          "Espalda completa": 21900},
+    "estampado-dtf":                     {"A5": 5900, "A4": 8900, "A3": 14900},
+    "vinilo-textil":                     {"Nombre o número": 4900, "Logo simple": 7900,
+                                          "Logo dos colores": 11900},
+    "diseno-y-vectorizacion-de-logo":    {"Vectorizar logo existente": 17900,
+                                          "Rediseño de logo": 39900,
+                                          "Logo desde cero": 69900},
     "sena-pedido-personalizado":         20000,
 }
 
@@ -94,7 +98,7 @@ PRODUCTOS = [
         "<li>Talles S al XXL — ver tabla de talles en la ficha</li>"
         "<li>Producción: 5 a 7 días hábiles desde la aprobación del diseño</li>"
         "<li>Desde 10 unidades, precio por cantidad</li></ul>",
-        "remera, personalizada, algodon, bordado, estampado, REVISAR PRECIO",
+        "remera, personalizada, algodon, bordado, estampado, exhibicion",
         "Remeras personalizadas con tu logo | Taxnara Diseños",
         "Remeras de algodón peinado personalizadas con bordado o estampado. Envíos a todo el país desde Catamarca. Pedidos por unidad o por cantidad.",
     ),
@@ -109,7 +113,7 @@ PRODUCTOS = [
         "<p>Ideal para promociones de egresados, marcas de indumentaria y merchandising de bandas o eventos.</p>"
         "<ul><li>Algodón pesado, corte unisex</li><li>Estampado DTF hasta A3</li>"
         "<li>Producción: 5 a 7 días hábiles</li></ul>",
-        "remera, oversize, estampado, dtf, REVISAR PRECIO",
+        "remera, oversize, estampado, dtf, exhibicion",
         "Remeras oversize personalizadas | Taxnara Diseños",
         "Remeras oversize de algodón pesado con estampado DTF a todo color. Diseño propio o el tuyo. Envíos a todo el país.",
     ),
@@ -126,7 +130,7 @@ PRODUCTOS = [
         "<ul><li>Frisa perchada, interior suave</li><li>Bordado en pecho + estampado en espalda</li>"
         "<li>Nombres individuales sin costo extra desde 15 unidades</li>"
         "<li>Producción: 7 a 10 días hábiles</li></ul>",
-        "buzo, canguro, hoodie, egresados, bordado, REVISAR PRECIO",
+        "buzo, canguro, hoodie, egresados, bordado, exhibicion",
         "Buzos canguro personalizados para egresados y equipos | Taxnara",
         "Buzos canguro de frisa con bordado y estampado personalizado. Nombres individuales incluidos por cantidad. Taxnara Diseños, Catamarca.",
     ),
@@ -140,7 +144,7 @@ PRODUCTOS = [
         "Más sobrio que el canguro: es el que eligen las empresas para el equipo de trabajo.</p>"
         "<ul><li>Frisa perchada</li><li>Bordado de logo en pecho izquierdo</li>"
         "<li>Producción: 7 a 10 días hábiles</li></ul>",
-        "buzo, cuello redondo, empresas, bordado, REVISAR PRECIO",
+        "buzo, cuello redondo, empresas, bordado, exhibicion",
         "Buzos cuello redondo con logo bordado | Taxnara Diseños",
         "Buzos de frisa cuello redondo con bordado del logo de tu empresa o institución. Pedidos por cantidad con presupuesto sin cargo.",
     ),
@@ -155,7 +159,7 @@ PRODUCTOS = [
         "<p>Bordamos el logo en el pecho y, si querés, el nombre del club o de la empresa en la espalda.</p>"
         "<ul><li>Tela resistente al agua y al viento</li><li>Bordado en pecho incluido</li>"
         "<li>Producción: 10 a 12 días hábiles</li></ul>",
-        "campera, rompevientos, club, empresa, bordado, REVISAR PRECIO",
+        "campera, rompevientos, club, empresa, bordado, exhibicion",
         "Camperas rompevientos bordadas para clubes y empresas | Taxnara",
         "Rompevientos personalizados con bordado de logo para clubes, equipos y empresas. Producción propia en Saujil, Catamarca.",
     ),
@@ -170,7 +174,7 @@ PRODUCTOS = [
         "<p>El bordado en pecho izquierdo va incluido en el precio.</p>"
         "<ul><li>Piqué de algodón</li><li>Bordado del logo incluido</li>"
         "<li>Desde 6 unidades para empresas</li><li>Producción: 7 a 10 días hábiles</li></ul>",
-        "chomba, pique, uniforme, empresa, bordado, REVISAR PRECIO",
+        "chomba, pique, uniforme, empresa, bordado, exhibicion",
         "Chombas con logo bordado para empresas | Taxnara Diseños",
         "Chombas de piqué con el logo de tu empresa bordado. Ropa de trabajo prolija y duradera. Presupuesto por cantidad sin cargo.",
     ),
@@ -185,7 +189,7 @@ PRODUCTOS = [
         "entre lo que sale y lo que se luce.</p>"
         "<ul><li>Talle único regulable</li><li>Bordado frontal incluido</li>"
         "<li>Producción: 5 a 7 días hábiles</li></ul>",
-        "gorra, bordado, merchandising, REVISAR PRECIO",
+        "gorra, bordado, merchandising, exhibicion",
         "Gorras personalizadas con logo bordado | Taxnara Diseños",
         "Gorras de gabardina con bordado de tu logo. Talle único regulable. Ideal para merchandising, equipos y comercios.",
     ),
@@ -201,7 +205,7 @@ PRODUCTOS = [
         "<p>Mandanos la foto, el logo o la frase y te enviamos la muestra digital antes de imprimir.</p>"
         "<ul><li>Cerámica blanca 11 oz</li><li>Impresión 360°, apta lavavajillas</li>"
         "<li>Producción: 3 a 5 días hábiles</li><li>Se entrega en caja</li></ul>",
-        "taza, sublimacion, regalo, personalizado, REVISAR PRECIO",
+        "taza, sublimacion, regalo, personalizado, exhibicion",
         "Tazas personalizadas con foto o logo | Taxnara Diseños",
         "Tazas de cerámica sublimadas a todo color con tu foto, logo o frase. Muestra digital antes de imprimir. Envíos a todo el país.",
     ),
@@ -215,7 +219,7 @@ PRODUCTOS = [
         "Es el regalo que siempre gana: nadie se lo espera.</p>"
         "<ul><li>Cerámica térmica 11 oz</li><li>El diseño aparece con el calor</li>"
         "<li>Lavado a mano recomendado</li><li>Producción: 3 a 5 días hábiles</li></ul>",
-        "taza magica, sublimacion, regalo, REVISAR PRECIO",
+        "taza magica, sublimacion, regalo, exhibicion",
         "Tazas mágicas personalizadas con tu foto | Taxnara Diseños",
         "Taza mágica sublimada: el diseño aparece con el líquido caliente. Personalizada con tu foto o logo. Envíos a todo el país.",
     ),
@@ -228,7 +232,7 @@ PRODUCTOS = [
         "<p>Almohadón de 40×40 cm con funda sublimada a todo color y relleno incluido.</p>"
         "<ul><li>Funda con cierre, se puede lavar</li><li>Relleno incluido</li>"
         "<li>Producción: 4 a 6 días hábiles</li></ul>",
-        "almohadon, sublimado, deco, regalo, REVISAR PRECIO",
+        "almohadon, sublimado, deco, regalo, exhibicion",
         "Almohadones personalizados con foto | Taxnara Diseños",
         "Almohadones de 40x40 sublimados con tu foto, logo o frase. Relleno incluido. Hechos en Catamarca, envíos a todo el país.",
     ),
@@ -242,7 +246,7 @@ PRODUCTOS = [
         "<p>Muy pedido por empresas para regalar a clientes: es útil, barato y lleva el logo puesto todo el día.</p>"
         "<ul><li>Base de goma antideslizante</li><li>Bordes termosellados</li>"
         "<li>Producción: 3 a 5 días hábiles</li></ul>",
-        "mouse pad, sublimado, merchandising, REVISAR PRECIO",
+        "mouse pad, sublimado, merchandising, exhibicion",
         "Mouse pads personalizados con tu logo | Taxnara Diseños",
         "Mouse pads sublimados a todo color con tu diseño o el logo de tu empresa. Tamaño estándar y gamer.",
     ),
@@ -256,7 +260,7 @@ PRODUCTOS = [
         "<p>Se pide mucho por equipo, con el nombre de cada jugador.</p>"
         "<ul><li>750 ml, libre de BPA</li><li>Nombre individual sin cargo por cantidad</li>"
         "<li>Producción: 4 a 6 días hábiles</li></ul>",
-        "botella, deportiva, club, equipo, REVISAR PRECIO",
+        "botella, deportiva, club, equipo, exhibicion",
         "Botellas deportivas personalizadas por equipo | Taxnara",
         "Botellas deportivas de 750 ml personalizadas con el escudo del club y el nombre de cada jugador.",
     ),
@@ -270,7 +274,7 @@ PRODUCTOS = [
         "El regalo empresarial que más dura y el que la gente realmente usa.</p>"
         "<ul><li>Acero inoxidable doble pared</li><li>Personalización con logo o nombre</li>"
         "<li>Producción: 5 a 8 días hábiles</li></ul>",
-        "termo, acero, mate, regalo empresarial, REVISAR PRECIO",
+        "termo, acero, mate, regalo empresarial, exhibicion",
         "Termos de acero personalizados con tu logo | Taxnara Diseños",
         "Termos de acero inoxidable personalizados con logo o nombre. Regalo empresarial y para eventos. Envíos a todo el país.",
     ),
@@ -290,7 +294,7 @@ PRODUCTOS = [
         "<li>Se trabaja con seña del 50% y saldo contra entrega</li>"
         "<li>Producción: 15 a 20 días hábiles desde la aprobación</li></ul>"
         "<p>Escribinos por WhatsApp con la cantidad y te armamos el presupuesto cerrado.</p>",
-        "egresados, promo, buzo, bordado, combo, REVISAR PRECIO",
+        "egresados, promo, buzo, bordado, combo, exhibicion",
         "Buzos de egresados personalizados | Taxnara Diseños",
         "Kit de egresados: buzo de frisa con el diseño de la promo, logo del colegio y nombre de cada egresado bordado. Desde 15 unidades.",
     ),
@@ -308,7 +312,7 @@ PRODUCTOS = [
         "<li>Reposición con el mismo archivo cuando entra personal nuevo</li>"
         "<li>Facturación A o B</li></ul>"
         "<p>Precio por unidad, según prenda y cantidad. Pedí tu presupuesto.</p>",
-        "empresas, uniforme, ropa de trabajo, bordado, REVISAR PRECIO",
+        "empresas, uniforme, ropa de trabajo, bordado, exhibicion",
         "Ropa de trabajo con logo bordado para empresas | Taxnara",
         "Indumentaria laboral bordada con el logo de tu empresa. Digitalización y muestra física incluidas. Facturación A o B.",
     ),
@@ -323,7 +327,7 @@ PRODUCTOS = [
         "<ul><li>Tela deportiva con secado rápido</li><li>Sublimación total: el diseño no se despega nunca</li>"
         "<li>Talles de niño y de adulto en el mismo pedido</li>"
         "<li>Mínimo 10 unidades</li><li>Producción: 15 a 20 días hábiles</li></ul>",
-        "camiseta, club, deportiva, sublimada, REVISAR PRECIO",
+        "camiseta, club, deportiva, sublimada, exhibicion",
         "Camisetas de club sublimadas a medida | Taxnara Diseños",
         "Camisetas deportivas sublimadas con escudo, sponsors, número y nombre. Talles de niño y adulto. Desde 10 unidades.",
     ),
@@ -337,7 +341,7 @@ PRODUCTOS = [
         "<p>Se entregan en caja lista para dar. Ideal para fin de año, aniversarios y eventos.</p>"
         "<ul><li>Presentación en caja</li><li>Descuento por cantidad desde 20 sets</li>"
         "<li>Producción: 7 a 10 días hábiles</li></ul>",
-        "regaleria, empresarial, combo, fin de año, REVISAR PRECIO",
+        "regaleria, empresarial, combo, fin de año, exhibicion",
         "Regalos empresariales personalizados con tu logo | Taxnara",
         "Sets de regalería empresarial con tu logo, listos para entregar en caja. Descuento por cantidad. Envíos a todo el país.",
     ),
@@ -354,7 +358,7 @@ PRODUCTOS = [
         "<ul><li>Hilo de alta resistencia, no destiñe</li>"
         "<li>Digitalización del logo: una sola vez por diseño</li>"
         "<li>Entrega: 3 a 5 días hábiles</li></ul>",
-        "bordado, servicio, logo, REVISAR PRECIO",
+        "bordado, servicio, logo, exhibicion",
         "Servicio de bordado de logos sobre prendas | Taxnara",
         "Bordamos tu logo sobre tus propias prendas. Precio por prenda, digitalización única. Saujil, Catamarca.",
     ),
@@ -368,7 +372,7 @@ PRODUCTOS = [
         "Sirve para algodón, poliéster y mezclas.</p>"
         "<ul><li>Full color, incluye degradés y fotos</li><li>Sin cantidad mínima</li>"
         "<li>Entrega: 2 a 4 días hábiles</li></ul>",
-        "dtf, estampado, servicio, REVISAR PRECIO",
+        "dtf, estampado, servicio, exhibicion",
         "Estampado DTF a todo color sobre tus prendas | Taxnara",
         "Estampado DTF full color sin cantidad mínima sobre tus propias prendas. Algodón, poliéster y mezclas.",
     ),
@@ -382,7 +386,7 @@ PRODUCTOS = [
         "de uno o dos colores. Terminación mate o brillante.</p>"
         "<ul><li>Mate, brillante, reflectivo o metalizado</li>"
         "<li>Ideal para camisetas de equipo</li><li>Entrega: 2 a 3 días hábiles</li></ul>",
-        "vinilo, textil, numeros, nombres, REVISAR PRECIO",
+        "vinilo, textil, numeros, nombres, exhibicion",
         "Vinilo textil: nombres, números y logos | Taxnara Diseños",
         "Aplicación de vinilo textil de corte para nombres, números y logos. Terminación mate, brillante o reflectiva.",
     ),
@@ -398,7 +402,7 @@ PRODUCTOS = [
         "en versión color, blanco y negro.</p>"
         "<ul><li>Hasta 2 rondas de correcciones</li><li>Archivos tuyos, para siempre</li>"
         "<li>Entrega: 3 a 7 días hábiles</li></ul>",
-        "diseño, logo, vectorizacion, identidad, REVISAR PRECIO",
+        "diseño, logo, vectorizacion, identidad, exhibicion",
         "Diseño y vectorización de logos | Taxnara Diseños",
         "Vectorizamos o diseñamos tu logo para que se pueda bordar y estampar. Entregamos los archivos finales en todos los formatos.",
     ),
@@ -415,7 +419,7 @@ PRODUCTOS = [
         "Anotá el número de presupuesto en las notas del pedido.</p>"
         "<p>La seña se descuenta del total. Si el trabajo no se puede hacer por un motivo nuestro, "
         "se reintegra completa.</p>",
-        "seña, pedido, presupuesto, REVISAR PRECIO",
+        "seña, pedido, presupuesto, exhibicion",
         "Seña de pedido personalizado | Taxnara Diseños",
         "Abonás acá la seña de tu pedido personalizado ya presupuestado para que entre a producción.",
     ),

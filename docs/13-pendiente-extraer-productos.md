@@ -47,13 +47,24 @@ SEO, peso, medidas, categorías, imagen y precio.
 
 ---
 
-## Qué recomiendo priorizar
+## Qué cargar, priorizado
 
-No subas las tres plataformas enteras a la Tiendanube. Elegí:
+**Está en [`plan/index.html`](../plan/index.html)**: quince productos ordenados por
+demanda, margen y temporada, con el calendario del año y la lista de lo que **no**
+conviene cargar.
 
-1. **Lo que producís vos** (textil, sublimados) → va completo, es tu margen real.
-2. **Lo que revendés y más te piden** → 10 o 15 productos, no 300. Un catálogo enorme
-   de merchandising que no tenés en stock te complica la entrega y te baja el margen.
-3. **Lo demás** → dejalo en las plataformas y linkealas desde la web.
+La regla que ordena todo: **tu margen está en lo que personalizás vos.** Cada producto
+que cargás y no producís te obliga a comprar, stockear y responder por algo que no
+controlás — y ahí competís contra la plataforma que te lo vende.
+
+Los tres primeros del plan son el hueco más grande del catálogo actual:
+
+1. **Mate + bombilla personalizado** — el regalo empresarial nº 1 en Argentina, y no está
+2. **Set matero completo** — ticket alto en un solo pedido, pico de noviembre a diciembre
+3. **Bolso matero** — sublimación sobre superficie grande
+
+Y el más rápido de todos es el **cuarto**: agregar talles de niño a la remera y el buzo
+no es un producto nuevo, son variantes de lo que ya está cargado. Se hace en diez minutos
+y abre colegios, jardines y clubes infantiles.
 
 Un catálogo corto y bien fotografiado vende más que uno largo y genérico.

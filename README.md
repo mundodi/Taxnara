@@ -44,6 +44,7 @@ No hace falta saber programar: todo se carga desde el administrador.
 | [`docs/11-la-pagina-web.md`](docs/11-la-pagina-web.md) | **La página web: cómo editarla y publicarla** |
 | [`docs/12-precios-y-mercado.md`](docs/12-precios-y-mercado.md) | **Precios, comparación con la competencia y márgenes** |
 | [`docs/13-pendiente-extraer-productos.md`](docs/13-pendiente-extraer-productos.md) | **Productos que faltan traer de las otras plataformas** |
+| [`plan/index.html`](plan/index.html) | **Qué cargar primero: 15 productos priorizados** |
 | [`import/productos-taxnara.csv`](import/productos-taxnara.csv) | El mismo catálogo en CSV, como respaldo |
 | [`brand/tokens.css`](brand/tokens.css) | Colores y tipografías en un solo lugar |
 | [`sitio/`](sitio) | **La página web**, lista para publicar |
