@@ -34,24 +34,16 @@ node sitio/build.mjs
 
 En `datos.mjs` está todo el contenido: contacto, técnicas, segmentos, pasos y catálogo.
 
-### ⟨COMPLETAR⟩ El WhatsApp
+### ✅ El WhatsApp ya está cargado
 
-Es lo primero. Arriba de `datos.mjs`:
+`whatsapp: '5493834942223'` en `datos.mjs`. **Los seis botones del sitio abren el chat
+con un mensaje ya escrito**, distinto según desde dónde se hizo clic ("quiero consultar
+por egresados", "por empresas", etc.).
 
-```js
-export const CONTACTO = {
-  whatsapp: '5493834123456',   // ← código de país, sin + ni espacios ni guiones
-  ...
-};
-```
+También están cargados el **horario** (lunes a viernes de 9 a 13 y de 16 a 20, fines de
+semana cerrado) y la **dirección completa** (Saujil, Pomán, Catamarca).
 
-Apenas lo completes y regeneres, **los seis botones del sitio pasan a abrir el chat
-de WhatsApp con un mensaje ya escrito**, distinto según desde dónde se hizo clic
-("quiero consultar por egresados", "por empresas", etc.). Mientras esté vacío, los
-botones bajan a la sección de contacto.
-
-También quedan marcados en magenta, en la propia página, el teléfono, el mail y el
-horario: son los `⟨COMPLETAR⟩` que faltan.
+Lo único que sigue marcado en la página es el **mail**: es el `⟨COMPLETAR⟩` que queda.
 
 ---
 
@@ -94,17 +86,20 @@ no publiques el sitio aparte: pasá su contenido a las páginas de la tienda
 ## Detalles técnicos
 
 - **Sin dependencias.** Un archivo HTML con CSS embebido. Nada de frameworks.
-- **Tipografías:** Archivo y Work Sans desde Google Fonts, con alternativas del sistema.
+- **Tipografías:** Poppins y Nunito Sans desde Google Fonts, con alternativas del sistema.
 - **Se adapta al tema del visitante:** claro y oscuro, con las dos paletas definidas.
 - **Responsive** de 390 px para arriba, verificado en celular y escritorio.
-- **Imágenes:** las mismas del catálogo. Sobre fondos oscuros usa la variante clara
-  de `img/productos-oscuro/`, generada aparte para que el acento cian no se
-  distorsione.
+- **Colores:** la paleta real de la marca, medida sobre el logo (ver [doc 01](01-identidad-de-marca.md)).
+- **Imágenes:** las del catálogo, en tres variantes según el fondo — `img/productos/`
+  (blanco), `img/productos-oscuro/` (sobre fucsia o tinta) y `img/productos-tinta/`
+  (sobre amarillo o celeste). Nunca se recolorean por CSS: cada una se genera con el
+  color correcto para que el acento no se distorsione.
 
 ### ⟨COMPLETAR⟩ Antes de publicarlo
 
-- [ ] WhatsApp en `datos.mjs`
-- [ ] Mail y horario
-- [ ] Reemplazar el logotipo tipografiado por el logo real (está en el `<header>` y en el pie)
+- [x] ~~WhatsApp~~ · ~~horario~~ · ~~dirección~~
+- [x] ~~Logo real~~ — está en `img/marca/logo-taxnara.png`, en el header y en el pie
+- [ ] El **mail** de contacto
+- [ ] El **logo en vector** (el actual salió de una captura; para imprimir hace falta el original)
 - [ ] Reemplazar las ilustraciones por fotos del taller
 - [ ] Agregar los enlaces a Términos y Política de privacidad en el pie (doc 06)

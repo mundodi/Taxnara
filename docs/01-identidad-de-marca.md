@@ -1,110 +1,112 @@
 # 01 · Identidad de marca
 
-## Idea rectora
+> **Corrección importante (27/08/2026).** La primera versión de este documento proponía
+> una paleta inventada —negro y cian sobre papel, "tintas de cuatricromía"— porque el
+> proxy de red bloqueaba Instagram y no pude ver el logo. **Era equivocada.**
+> Ahora los colores están **medidos sobre el logo real**, píxel a píxel.
 
-En Instagram, Taxnara no vende remeras: vende **el logo de otro, bien puesto**.
-Clubes, egresados, empresas y emprendimientos de la zona le confían su identidad al
-taller. La tienda tiene que transmitir eso mismo: **oficio, terminación y confianza**,
-no saldo.
+---
 
-De ahí salen tres decisiones:
+## La marca
 
-1. **La foto manda.** Cada producto se muestra terminado, sobre alguien, en uso.
-   Nada de renders vacíos.
-2. **La paleta sale del oficio.** No es una paleta "linda" elegida al azar: son las
-   **tintas de cuatricromía** con las que se estampa y se sublima —negro, cian,
-   magenta— sobre papel. Es el sistema de color con el que Taxnara ya trabaja
-   todos los días.
-3. **Un solo acento.** El cian se usa para *botones y links*, nada más. El magenta
-   se reserva **exclusivamente** para ofertas. Si el color está en todos lados, deja
-   de significar "acá se hace clic".
+Taxnara no es un taller sobrio. **Es una jirafa hipster con lentes corazón.**
+
+El logo es un dibujo a mano alzada de una jirafa con anteojos rosa en forma de corazón,
+lentes amarillos y moño a lunares, con "**Taxnara!**" escrito en marcador fucsia grueso.
+Atrás, las manchas de la jirafa en celeste.
+
+Eso define todo: es una marca **alegre, cálida y con humor**, no una imprenta industrial.
+La web y la tienda tienen que sonar igual.
 
 **Frase de marca:** *Identidad visual para tus productos.*
-**Tono:** cercano, de taller, de vos. Ni corporativo ni informal de más.
+**Tono:** de vos, cercano, con energía. El oficio se demuestra en la terminación, no en
+la solemnidad.
 
 ---
 
 ## Paleta
 
-| Rol | Nombre | HEX | Dónde va |
-|---|---|---|---|
-| Principal | Tinta | `#15171C` | Header, footer, títulos, precios |
-| Acento | Cian | `#0F7C88` | Botones, links, íconos |
-| Acento oscuro | Cian oscuro | `#0A5C66` | Hover de botones |
-| Promo | Magenta | `#C8246B` | **Solo** etiquetas de oferta |
-| Fondo suave | Papel | `#EEF1F1` | Franjas de sección |
-| Fondo base | Blanco | `#FFFFFF` | Página y fichas de producto |
-| Texto secundario | Humo | `#5F686A` | Descripciones, ayudas |
-| Bordes | Línea | `#D7DEDE` | Separadores |
-| Positivo | Verde | `#2E6F4E` | "Envío gratis", stock |
+Los valores salen de analizar el logo y la placa de horarios de Instagram, no de elegir
+"algo parecido":
 
-**El gris no es un gris neutro.** Tiene un sesgo hacia el cian. Es un detalle que
-casi nadie nota conscientemente, pero hace que toda la paleta se lea como un sistema
-y no como colores sueltos.
+| Rol | Nombre | HEX | De dónde sale | Dónde va |
+|---|---|---|---|---|
+| Marca | **Fucsia** | `#E6028B` | El "Taxnara!" y el fondo de las placas | Hero, títulos grandes, fondos de marca |
+| Botones | Fucsia botón | `#D1017E` | Fucsia oscurecido para contraste | Botones y links |
+| Hover | Fucsia oscuro | `#B00169` | | Hover de botones |
+| Acento | **Amarillo** | `#F4C721` | Los lentes corazón, el moño, la tarjeta | Bloques destacados, CTA sobre fucsia |
+| Acento | **Celeste** | `#1CA2DE` | Las manchas de la jirafa | Detalles, motivo de fondo |
+| Texto | Tinta | `#16161A` | El trazo del dibujo | Textos y línea |
+| Fondo suave | Papel | `#FDF3F8` | Blanco con un susurro de fucsia | Franjas de sección |
+| Secundario | Humo | `#6B6470` | | Descripciones |
+| Bordes | Línea | `#EBDFE6` | | Separadores |
 
-> ⟨COMPLETAR⟩ **Estos son los colores propuestos, no los del logo real.**
-> No pude descargar el logo (Instagram, Facebook y TikTok están bloqueados en esta
-> sesión). Abrí el logo, sacá los 2 colores dominantes y reemplazá **Tinta** y
-> **Cian** en [`brand/tokens.css`](../brand/tokens.css). El resto de la paleta sigue
-> funcionando alrededor de esos dos.
+### ⚠️ Reglas de contraste — están medidas, no son opinión
 
-**Contraste:** cian sobre blanco y blanco sobre tinta pasan AA para texto normal.
-Si cambiás el acento por algo más claro (amarillo, celeste pastel), el texto del
-botón tiene que pasar a Tinta, no quedar blanco.
+| Combinación | Ratio | Veredicto |
+|---|---|---|
+| Tinta sobre **amarillo** | 11.20 | ✅ |
+| Blanco sobre **amarillo** | **1.61** | ❌ **Ilegible. Nunca.** |
+| Tinta sobre **celeste** | 6.25 | ✅ |
+| Blanco sobre **celeste** | **2.89** | ❌ **No usar.** |
+| Blanco sobre fucsia `#E6028B` | 4.42 | ⚠️ Solo títulos grandes |
+| Blanco sobre fucsia `#D1017E` | 5.23 | ✅ Botones y texto normal |
 
----
-
-## Tipografías
-
-| Uso | Fuente | Peso | Tamaño de referencia |
-|---|---|---|---|
-| Títulos y botones | **Archivo** | 700 / 800 | Hero 48px · Sección 30px · Ficha 18px |
-| Texto y descripciones | **Work Sans** | 400 | 16px, interlineado 1.65 |
-| Precio | Archivo | 700 | 20px |
-
-**Archivo** es una grotesca industrial: tiene la contundencia de un cartel impreso.
-Le da a la tienda la voz de un taller, no la de un catálogo genérico.
-
-Alternativas equivalentes si no aparecen en tu panel: **Oswald** (títulos) y
-**Barlow** (texto).
-
-Regla simple: **dos fuentes, tres tamaños por pantalla.** Nada más.
+**En criollo: sobre amarillo y celeste va SIEMPRE texto negro.** Es el error más fácil
+de cometer con esta paleta y el que más arruina una placa.
 
 ---
 
 ## Logo
 
-| Versión | Para qué | Formato |
-|---|---|---|
-| Horizontal, fondo claro | Header de la tienda | PNG transparente, alto 120px |
-| Horizontal en blanco | Footer y fondos oscuros | PNG transparente |
-| Isotipo cuadrado | Favicon, redes, WhatsApp | PNG 512×512 |
+El archivo está en [`img/marca/logo-taxnara.png`](../img/marca/logo-taxnara.png):
+recortado en círculo, con el fondo transparente y **sin el botón de corazón de Instagram**
+que traía la captura.
 
-- Aire mínimo alrededor del logo: la altura de la letra "T".
-- Nunca sobre una foto con detalle: si va sobre foto, poné una capa oscura al 40 %.
-- Nunca deformado, rotado ni con sombra.
+- **Tamaño mínimo: 56 px.** Por debajo, el dibujo de la jirafa se empasta y no se lee.
+- Va siempre **sobre fondo claro**. Sobre fucsia o tinta, dejale el círculo blanco.
+- Nunca deformado ni recoloreado.
+
+> ⟨COMPLETAR⟩ Si tenés el **archivo original** del logo (AI, PDF o PNG en alta), pasámelo:
+> el que está en el repo salió de una captura de pantalla y se nota en los bordes.
+> Para imprimir en grande o bordar hace falta el vector.
+
+---
+
+## Tipografías
+
+| Uso | Fuente | Peso |
+|---|---|---|
+| Títulos y botones | **Poppins** | 700 / 800 |
+| Texto | **Nunito Sans** | 400 / 600 |
+
+El "Taxnara!" del logo es un marcador grueso y redondeado. Poppins acompaña esa energía
+sin competirle. Los bordes redondeados de 14 px siguen la misma lógica: **la marca es
+redonda, no angulosa.**
+
+---
+
+## El motivo de las manchas
+
+Las manchas de jirafa aparecen en el logo y en las placas de Instagram. Están reproducidas
+en SVG y se usan como textura de fondo (en el hero y en los bloques destacados).
+
+Es lo que hace que la web se lea como **parte de la misma marca** y no como algo pegado
+aparte. Usalas siempre a baja opacidad: son textura, no protagonista.
 
 ---
 
 ## Medidas de imagen para Tiendanube
 
-| Elemento | Medida | Peso máx. | Notas |
-|---|---|---|---|
-| Logo header | 400 × 120 px | 100 KB | PNG transparente |
-| Favicon | 512 × 512 px | 50 KB | Isotipo solo |
-| Banner principal (escritorio) | 1920 × 800 px | 400 KB | Dejá el tercio izquierdo despejado para el texto |
-| Banner principal (celular) | 900 × 1200 px | 300 KB | Vertical, texto centrado |
-| Banner secundario | 1200 × 600 px | 250 KB | |
-| Foto de producto | 1200 × 1200 px | 300 KB | **Cuadrada, siempre.** Es lo que más ordena la grilla |
-| Imagen de categoría | 800 × 800 px | 200 KB | |
-| Compartir en redes (OG) | 1200 × 630 px | 300 KB | Logo + frase de marca |
+| Elemento | Medida | Peso máx. |
+|---|---|---|
+| Logo header | 400 × 120 px | 100 KB |
+| Favicon | 512 × 512 px | 50 KB |
+| Banner principal (escritorio) | 1920 × 800 px | 400 KB |
+| Banner principal (celular) | 900 × 1200 px | 300 KB |
+| Foto de producto | 1200 × 1200 px | 300 KB |
+| Compartir en redes (OG) | 1200 × 630 px | 300 KB |
 
-**Fotos de producto — las 4 tomas de cada artículo:**
-
-1. La prenda entera, plana o sobre percha, fondo claro parejo.
-2. **Detalle macro del bordado o del estampado.** Esta es la que vende: se ve el hilo.
-3. La prenda puesta por una persona, en contexto real.
-4. Una variante de color, para que se entienda que hay opciones.
-
-Truco de taller: sacá todas las fotos en el mismo lugar y a la misma hora del día.
-Una grilla pareja parece más cara que las fotos sueltas, aunque el producto sea el mismo.
+**Fotos de producto — las 4 tomas:** prenda entera · **detalle macro del bordado** ·
+puesta sobre una persona · la grilla de colores. El detalle macro es la que justifica
+el precio; está explicado en [`12-precios-y-mercado.md`](12-precios-y-mercado.md).

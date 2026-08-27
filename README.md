@@ -43,10 +43,11 @@ No hace falta saber programar: todo se carga desde el administrador.
 | [`docs/10-estado-de-la-tienda.md`](docs/10-estado-de-la-tienda.md) | **Qué quedó cargado en la tienda y qué falta** |
 | [`docs/11-la-pagina-web.md`](docs/11-la-pagina-web.md) | **La página web: cómo editarla y publicarla** |
 | [`docs/12-precios-y-mercado.md`](docs/12-precios-y-mercado.md) | **Precios, comparación con la competencia y márgenes** |
+| [`docs/13-pendiente-extraer-productos.md`](docs/13-pendiente-extraer-productos.md) | **Productos que faltan traer de las otras plataformas** |
 | [`import/productos-taxnara.csv`](import/productos-taxnara.csv) | El mismo catálogo en CSV, como respaldo |
 | [`brand/tokens.css`](brand/tokens.css) | Colores y tipografías en un solo lugar |
 | [`sitio/`](sitio) | **La página web**, lista para publicar |
-| [`img/`](img) | Imágenes de exhibición de los productos, con su generador |
+| [`img/`](img) | Logo real y las imágenes de producto, con su generador |
 | [`preview/index.html`](preview/index.html) | Maqueta visual del inicio de la tienda |
 
 ---
@@ -56,8 +57,9 @@ No hace falta saber programar: todo se carga desde el administrador.
 Estos datos no los pude sacar de las redes (el proxy de esta sesión bloquea Instagram,
 Facebook y TikTok). Están marcados en todos los archivos como `⟨COMPLETAR⟩`:
 
-- **HEX exactos del logo** → `brand/tokens.css`
-- **Teléfono / WhatsApp de ventas**
+- ~~HEX del logo~~ ✅ medidos sobre el logo real
+- ~~WhatsApp~~ ✅ +54 9 3834 94-2223
+- ~~Horarios y dirección~~ ✅ Lun a Vie 9–13 y 16–20 · Saujil, Pomán
 - **CUIT y razón social** (obligatorio para facturar y para los Términos)
 - **Mail de contacto** de la tienda
 - **Fotos reales** → las del catálogo son ilustraciones provisorias.

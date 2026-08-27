@@ -3,14 +3,14 @@
  * Editá este archivo y corré `node sitio/build.mjs` para regenerar la web.
  */
 
-// ⟨COMPLETAR⟩ Cargá el WhatsApp con código de país y sin signos: 5493834XXXXXX
-// Apenas lo completes, todos los botones del sitio pasan a abrir el chat solos.
+// El WhatsApp ya está cargado: todos los botones del sitio abren el chat
+// con un mensaje distinto según la sección desde la que se hizo clic.
 export const CONTACTO = {
-  whatsapp: '',                                  // ej: '5493834123456'
-  telefonoVisible: '⟨COMPLETAR: teléfono⟩',
+  whatsapp: '5493834942223',
+  telefonoVisible: '+54 9 3834 94-2223',
   mail: '⟨COMPLETAR: mail⟩',
-  direccion: 'Av. Señor del Milagro 645, Saujil, Catamarca',
-  horario: '⟨COMPLETAR: horario⟩',
+  direccion: 'Av. Señor del Milagro 645 — Saujil, Pomán, Catamarca',
+  horario: 'Lunes a viernes de 9 a 13 y de 16 a 20 · Sábados y domingos cerrado',
   tienda: 'https://taxnara.mitiendanube.com',
   instagram: 'https://www.instagram.com/taxnaradisenos/',
   tiktok: 'https://www.tiktok.com/@taxnara',

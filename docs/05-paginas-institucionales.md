@@ -34,7 +34,7 @@ cosa. Preferimos perder una venta a entregar algo que no nos gusta.
 
 ### Dónde estamos
 
-Av. Señor del Milagro 645 — Saujil, Catamarca, Argentina.
+Av. Señor del Milagro 645 — Saujil, departamento Pomán, Catamarca.
 Podés pasar por el taller a ver muestras o retirar tu pedido sin cargo.
 
 ---
@@ -154,17 +154,17 @@ la provincia. Lo que ofrecemos no es solo la prenda:
 Mandanos por WhatsApp tu logo, qué prenda te interesa y cuántas unidades.
 Te respondemos con el presupuesto y una propuesta de cómo quedaría.
 
-**⟨COMPLETAR: WhatsApp⟩** · **⟨COMPLETAR: mail⟩**
+**+54 9 3834 94-2223** · **⟨COMPLETAR: mail⟩**
 
 ---
 
 ## Página: Contacto
 **URL:** `/contacto`
 
-**WhatsApp:** ⟨COMPLETAR⟩ — es la vía más rápida
+**WhatsApp:** [+54 9 3834 94-2223](https://wa.me/5493834942223) — es la vía más rápida
 **Mail:** ⟨COMPLETAR⟩
-**Taller:** Av. Señor del Milagro 645, Saujil, Catamarca
-**Horario:** ⟨COMPLETAR⟩
+**Taller:** Av. Señor del Milagro 645 — Saujil, Pomán, Catamarca
+**Horario:** Lunes a viernes de 9 a 13 y de 16 a 20. Sábados y domingos, cerrado.
 
 **Instagram:** [@taxnaradisenos](https://www.instagram.com/taxnaradisenos/)
 **TikTok:** [@taxnara](https://www.tiktok.com/@taxnara)

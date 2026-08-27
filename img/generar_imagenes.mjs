@@ -12,20 +12,20 @@ import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
 import fs from 'fs';
 import path from 'path';
 
-const TINTA = '#15171C';
-const CIAN  = '#0F7C88';
-const CIAN_CLARO = '#7FD3DC';   // acento sobre fondos oscuros
+const TINTA = '#16161A';
+const CIAN  = '#D1017E';   // fucsia de marca (contraste AA sobre blanco)
+const CIAN_CLARO = '#F4C721';   // amarillo de marca: acento sobre fondos oscuros
 
 /** Colores reales de las prendas: [relleno, contorno, acento]. */
 const COLORES = {
-  'Blanco':        ['#FFFFFF', '#A3AEB1', CIAN],
-  'Negro':         ['#24272A', '#141618', CIAN_CLARO],
-  'Gris melange':  ['#B7BEC1', '#8B9497', '#0A5C66'],
-  'Beige':         ['#DBCDB6', '#B0A084', '#0A5C66'],
-  'Azul marino':   ['#263C5D', '#16263D', CIAN_CLARO],
-  'Azul':          ['#2E6FA8', '#1D4A73', CIAN_CLARO],
+  'Blanco':        ['#FFFFFF', '#C9BCC4', CIAN],
+  'Negro':         ['#24242A', '#141418', CIAN_CLARO],
+  'Gris melange':  ['#BFB8BE', '#948C93', '#B00169'],
+  'Beige':         ['#DBCDB6', '#B0A084', '#B00169'],
+  'Azul marino':   ['#233A5C', '#14243B', CIAN_CLARO],
+  'Azul':          ['#1CA2DE', '#12719D', '#16161A'],
   'Rojo':          ['#B3202B', '#7C1219', CIAN_CLARO],
-  'Acero':         ['#C6CCCF', '#8E9699', '#0A5C66'],
+  'Acero':         ['#C8C4CA', '#948E96', '#B00169'],
 };
 
 /** Qué producto se ofrece en qué colores. */
@@ -194,9 +194,11 @@ const svg = (cuerpo, acento, texto = '',
 </svg>`;
 
 const SALIDA_OSC = SALIDA + '-oscuro';
+const SALIDA_TIN = SALIDA + '-tinta';
 const SALIDA_COL = SALIDA + '-color';
 fs.mkdirSync(SALIDA, { recursive: true });
 fs.mkdirSync(SALIDA_OSC, { recursive: true });
+fs.mkdirSync(SALIDA_TIN, { recursive: true });
 fs.mkdirSync(SALIDA_COL, { recursive: true });
 const navegador = await chromium.launch();
 const pagina = await navegador.newPage({ viewport: { width: 1200, height: 1200 } });
@@ -212,6 +214,12 @@ for (const [nombre, cuerpo, acento, texto] of PRODUCTOS) {
     `<style>html,body{margin:0;padding:0}svg{display:block}</style>` +
     svg(cuerpo, acento, texto, { fondo: false, trazo: '#FFFFFF', marca: CIAN_CLARO }));
   await pagina.screenshot({ path: path.join(SALIDA_OSC, `${nombre}.png`), omitBackground: true });
+
+  // 2b) trazo negro sobre transparente: para los bloques amarillos y celestes
+  await pagina.setContent(
+    `<style>html,body{margin:0;padding:0}svg{display:block}</style>` +
+    svg(cuerpo, acento, texto, { fondo: false, trazo: TINTA, marca: CIAN }));
+  await pagina.screenshot({ path: path.join(SALIDA_TIN, `${nombre}.png`), omitBackground: true });
 
   // 3) una por cada color que se ofrece, con el relleno real de la prenda
   const colores = VARIANTES_COLOR[nombre] || [];
@@ -230,4 +238,5 @@ for (const [nombre, cuerpo, acento, texto] of PRODUCTOS) {
 await navegador.close();
 console.log(`\n${PRODUCTOS.length} imágenes en ${SALIDA}`);
 console.log(`${PRODUCTOS.length} en versión clara (fondos oscuros) en ${SALIDA_OSC}`);
+console.log(`${PRODUCTOS.length} en trazo negro transparente en ${SALIDA_TIN}`);
 console.log(`${fs.readdirSync(SALIDA_COL).length} en color real en ${SALIDA_COL}`);

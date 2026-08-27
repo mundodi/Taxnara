@@ -16,8 +16,8 @@ Al lado de cada paso está el archivo de este repo del que sacás el contenido.
 2. **Configuración → Datos del negocio**
    - Nombre de la tienda: `Taxnara Diseños`
    - Razón social y CUIT: `⟨COMPLETAR⟩` — hace falta para facturar y para los Términos.
-   - Dirección: Av. Señor del Milagro 645, Saujil, Catamarca, Argentina.
-   - Teléfono / WhatsApp: `⟨COMPLETAR⟩`
+   - Dirección: Av. Señor del Milagro 645 — Saujil, Pomán, Catamarca, Argentina.
+   - Teléfono / WhatsApp: +54 9 3834 94-2223
    - Mail de contacto: `⟨COMPLETAR⟩`
 3. **Configuración → Idioma y moneda:** Español (Argentina) · Peso argentino (ARS).
 4. **Configuración → Redes sociales:** cargar Instagram, Facebook y TikTok

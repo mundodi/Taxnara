@@ -25,7 +25,7 @@ Título hasta 60 caracteres, descripción hasta 155.
 | Sublimados | Tazas, almohadones y termos personalizados | Sublimación a todo color con tu foto o logo. Muestra digital antes de imprimir. Regalos que se usan. |
 | Servicios | Bordado, DTF y vinilo sobre tus prendas | Traé tu prenda y la personalizamos. Bordado, estampado DTF y vinilo textil en Saujil, Catamarca. |
 | Nosotros | Quiénes somos · Taller de personalización en Saujil | Taller de sublimación, bordado y estampado en Saujil, Catamarca. Producción propia y muestra antes de producir. |
-| Contacto | Contacto · Taxnara Diseños, Saujil | Escribinos por WhatsApp para tu presupuesto. Av. Señor del Milagro 645, Saujil, Catamarca. |
+| Contacto | Contacto · Taxnara Diseños, Saujil | Escribinos por WhatsApp para tu presupuesto. Av. Señor del Milagro 645 — Saujil, Pomán, Catamarca. |
 
 Los productos ya traen su SEO cargado en el CSV.
 
@@ -52,7 +52,7 @@ cosa de esta lista. Cargá el taller en
 
 - Nombre: **Taxnara Diseños**
 - Categoría: *Servicio de bordado* (secundaria: *Imprenta*)
-- Dirección: Av. Señor del Milagro 645, Saujil, Catamarca
+- Dirección: Av. Señor del Milagro 645 — Saujil, Pomán, Catamarca
 - Horarios, teléfono y **el link de la tienda**
 - 10 fotos de trabajos terminados
 

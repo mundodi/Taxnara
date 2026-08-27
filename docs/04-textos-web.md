@@ -117,7 +117,7 @@ Promo 2027: reservá tus buzos con seña · Cupos limitados
 > WhatsApp para coordinar el diseño. No arrancamos la producción hasta que apruebes
 > cómo va a quedar.
 >
-> Cualquier cosa, respondé este mail o escribinos al ⟨COMPLETAR: WhatsApp⟩.
+> Cualquier cosa, respondé este mail o escribinos al +54 9 3834 94-2223.
 >
 > Taxnara Diseños — Saujil, Catamarca
 
@@ -133,6 +133,6 @@ Promo 2027: reservá tus buzos con seña · Cupos limitados
 > Tu pedido **#{numero}** está listo.
 >
 > Te esperamos en **Av. Señor del Milagro 645, Saujil**.
-> Horario: ⟨COMPLETAR⟩
+> Horario: lunes a viernes de 9 a 13 y de 16 a 20
 >
 > Traé el número de pedido y tu DNI.

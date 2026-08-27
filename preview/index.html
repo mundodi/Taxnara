@@ -1,51 +1,51 @@
 <title>Tienda Taxnara Diseños</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
 
 <style>
 /* ============================================================
    Tokens — la paleta sale de las tintas de cuatricromía
    ============================================================ */
 :root{
-  --tinta:#15171C;
-  --cian:#0F7C88;
-  --cian-osc:#0A5C66;
-  --magenta:#C8246B;
-  --papel:#EEF1F1;
+  --tinta:#16161A;
+  --cian:#D1017E;
+  --cian-osc:#B00169;
+  --magenta:#F4C721;
+  --papel:#FDF3F8;
   --sup:#FFFFFF;
-  --humo:#5F686A;
-  --linea:#D7DEDE;
+  --humo:#6B6470;
+  --linea:#EBDFE6;
   --ok:#2E6F4E;
-  --fondo:#E4E9E9;
-  --texto:#15171C;
+  --fondo:#F3E9EE;
+  --texto:#16161A;
   --texto-inv:#FFFFFF;
   --barra:#15171C;
   --on-cian:#FFFFFF;   /* texto sobre el cian */
-  --cta-bg:#15171C;    /* botón del carrito */
+  --cta-bg:#D1017E;    /* botón del carrito */
   --cta-fg:#FFFFFF;
-  --prenda:#15171C;    /* siluetas en las fichas */
-  --bloque:#0A5C66;    /* panel destacado del bloque de bordado */
+  --prenda:#16161A;    /* siluetas en las fichas */
+  --bloque:#F4C721;    /* panel destacado del bloque de bordado */
   --sombra:0 1px 2px rgba(21,23,28,.06),0 8px 24px rgba(21,23,28,.06);
-  --ft:"Archivo","Oswald",system-ui,sans-serif;
-  --fb:"Work Sans","Barlow",system-ui,sans-serif;
-  --r:6px;
+  --ft:"Poppins","Nunito Sans",system-ui,sans-serif;
+  --fb:"Nunito Sans","Work Sans",system-ui,sans-serif;
+  --r:14px;
   --max:1180px;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --tinta:#0B0D0F; --cian:#3FA6B0; --cian-osc:#5FC0C9; --magenta:#E8558E;
-    --papel:#181C1E; --sup:#141719; --humo:#98A3A5; --linea:#2A3134; --ok:#4E9E76;
-    --fondo:#0B0D0F; --texto:#E8EDED; --texto-inv:#0B0D0F; --barra:#000000;
-    --on-cian:#06181A; --cta-bg:#3FA6B0; --cta-fg:#06181A; --prenda:#C3CDCE; --bloque:#0E3F46;
+    --tinta:#0C0A10; --cian:#FF3DA5; --cian-osc:#FF69B8; --magenta:#F4C721;
+    --papel:#1C1822; --sup:#171320; --humo:#A79FAE; --linea:#332B3B; --ok:#4E9E76;
+    --fondo:#121016; --texto:#F3EDF2; --texto-inv:#0B0D0F; --barra:#000000;
+    --on-cian:#12040C; --cta-bg:#FF3DA5; --cta-fg:#12040C; --prenda:#EFE7ED; --bloque:#F4C721;
     --sombra:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
   }
 }
 :root[data-theme="dark"]{
-  --tinta:#0B0D0F; --cian:#3FA6B0; --cian-osc:#5FC0C9; --magenta:#E8558E;
-  --papel:#181C1E; --sup:#141719; --humo:#98A3A5; --linea:#2A3134; --ok:#4E9E76;
-  --fondo:#0B0D0F; --texto:#E8EDED; --texto-inv:#0B0D0F; --barra:#000000;
-  --on-cian:#06181A; --cta-bg:#3FA6B0; --cta-fg:#06181A; --prenda:#C3CDCE; --bloque:#0E3F46;
+  --tinta:#0C0A10; --cian:#FF3DA5; --cian-osc:#FF69B8; --magenta:#F4C721;
+  --papel:#1C1822; --sup:#171320; --humo:#A79FAE; --linea:#332B3B; --ok:#4E9E76;
+  --fondo:#121016; --texto:#F3EDF2; --texto-inv:#0B0D0F; --barra:#000000;
+  --on-cian:#12040C; --cta-bg:#FF3DA5; --cta-fg:#12040C; --prenda:#EFE7ED; --bloque:#F4C721;
   --sombra:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
 }
 
@@ -113,25 +113,25 @@ img,svg{max-width:100%}
 
 /* ---------- Hero ---------- */
 .hero{
-  position:relative; background:var(--tinta); color:#fff; overflow:hidden;
+  position:relative; background:#E6028B; color:#fff; overflow:hidden;
   border-bottom:1px solid var(--linea);
 }
 /* trama de semitono: la textura del estampado */
 .hero::before{
   content:""; position:absolute; inset:0;
-  background-image:radial-gradient(circle at center, rgba(255,255,255,.13) 1.4px, transparent 1.5px);
-  background-size:11px 11px; opacity:.9;
+  background-image:radial-gradient(circle at center, rgba(255,255,255,.14) 2px, transparent 2.1px);
+  background-size:16px 16px; opacity:.9;
 }
 .hero::after{
   content:""; position:absolute; right:-140px; top:-140px; width:620px; height:620px;
-  border-radius:50%; background:radial-gradient(circle,var(--cian) 0%,transparent 65%); opacity:.4;
+  border-radius:50%; background:radial-gradient(circle,#F4C721 0%,transparent 65%); opacity:.3;
 }
 .hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:76px 24px 84px}
 .volanta{
   font-family:var(--ft);font-size:11.5px;font-weight:600;letter-spacing:.22em;
-  text-transform:uppercase;color:#7FD3DC;display:flex;align-items:center;gap:12px;margin-bottom:22px;
+  text-transform:uppercase;color:#F4C721;display:flex;align-items:center;gap:12px;margin-bottom:22px;
 }
-.volanta::before{content:"";width:34px;height:2px;background:#7FD3DC;flex:none}
+.volanta::before{content:"";width:34px;height:3px;border-radius:2px;background:#F4C721;flex:none}
 .hero h1{font-size:clamp(38px,5.6vw,64px);font-weight:800;letter-spacing:-.03em}
 .hero p{margin-top:20px;font-size:17px;line-height:1.6;color:#C3CDCE;max-width:44ch}
 .btn{
@@ -148,7 +148,7 @@ img,svg{max-width:100%}
   position:absolute;left:0;bottom:8px;display:flex;gap:7px;
 }
 .puntos i{width:26px;height:3px;background:rgba(255,255,255,.28);border-radius:2px}
-.puntos i.on{background:#7FD3DC;width:38px}
+.puntos i.on{background:#F4C721;width:38px}
 @media (max-width:860px){
   .hero-in{grid-template-columns:1fr;padding:52px 24px 60px;gap:34px}
   .hero-art{order:-1}
@@ -200,7 +200,7 @@ img,svg{max-width:100%}
   letter-spacing:.09em;text-transform:uppercase;padding:5px 9px;border-radius:999px;
   background:var(--sup);color:var(--cian-osc);border:1px solid var(--linea);
 }
-.chip-of{background:var(--magenta);color:#fff;border-color:transparent}
+.chip-of{background:var(--magenta);color:#16161A;border-color:transparent}
 .card-body{padding:15px 15px 18px;display:flex;flex-direction:column;gap:7px;flex:1}
 .card-cat{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--humo);font-weight:600}
 .card h3{font-size:15.5px;font-weight:600;line-height:1.3}
@@ -221,9 +221,9 @@ img,svg{max-width:100%}
 .bordado-img{background:var(--bloque);display:grid;place-items:center;padding:40px;position:relative;overflow:hidden}
 .bordado-img::before{
   content:"";position:absolute;inset:0;
-  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.07) 0 2px,transparent 2px 7px);
+  background-image:repeating-linear-gradient(45deg,rgba(22,22,26,.08) 0 2px,transparent 2px 7px);
 }
-.bordado-img svg{width:min(280px,80%);color:#fff;position:relative;z-index:1}
+.bordado-img svg{width:min(280px,80%);color:#16161A;position:relative;z-index:1}
 @media (max-width:860px){.bordado{grid-template-columns:1fr}.bordado-txt{padding:44px 24px}}
 
 /* ---------- Pasos ---------- */
@@ -261,7 +261,7 @@ img,svg{max-width:100%}
 .pie h4{font-family:var(--ft);color:#fff;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
 .pie ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
 .pie a{text-decoration:none}
-.pie a:hover{color:#7FD3DC}
+.pie a:hover{color:#F4C721}
 .pie-marca strong{font-family:var(--ft);font-weight:800;font-size:21px;color:#fff;letter-spacing:-.02em;display:block}
 .pie-marca p{margin-top:12px;line-height:1.6;max-width:34ch}
 .redes{display:flex;gap:10px;margin-top:18px}
@@ -269,7 +269,7 @@ img,svg{max-width:100%}
   width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:var(--r);
   display:grid;place-items:center;color:#C3CDCE;
 }
-.redes a:hover{border-color:#7FD3DC;color:#7FD3DC}
+.redes a:hover{border-color:#F4C721;color:#F4C721}
 .arrep{
   display:inline-block;margin-top:14px;border:1px solid rgba(255,255,255,.28);
   border-radius:var(--r);padding:9px 14px;font-family:var(--ft);font-weight:600;
@@ -648,7 +648,7 @@ img,svg{max-width:100%}
         </div>
       </div>
       <div class="pie-bajo">
-        <span>© 2026 Taxnara Diseños · CUIT ⟨completar⟩ · Saujil, Catamarca, Argentina</span>
+        <span>© 2026 Taxnara Diseños · CUIT ⟨completar⟩ · Saujil, Pomán, Catamarca · +54 9 3834 94-2223</span>
         <span class="fiscal">DATA<br>FISCAL<br>ARCA</span>
       </div>
     </div>
@@ -664,40 +664,40 @@ img,svg{max-width:100%}
 
   <div class="notas-grid">
     <div class="nota">
-      <h3>La paleta sale del oficio</h3>
-      <p>No es una paleta elegida por linda: son las tintas de cuatricromía —negro, cian,
-         magenta— sobre papel. Es el mismo sistema de color con el que Taxnara estampa y
-         sublima todos los días. El gris tampoco es neutro: tiene sesgo hacia el cian,
-         y eso hace que todo se lea como un sistema.</p>
+      <h3>La paleta es la del logo, medida</h3>
+      <p>Los colores están sacados píxel a píxel del logo real y de la placa de horarios
+         de Instagram: el fucsia del "Taxnara!", el amarillo de los lentes corazón y el
+         celeste de las manchas de la jirafa. No son una interpretación: son los valores
+         exactos que ya usa la marca.</p>
       <div class="swatches">
-        <div class="sw"><i style="background:#15171C"></i><small>15171C</small></div>
-        <div class="sw"><i style="background:#0F7C88"></i><small>0F7C88</small></div>
-        <div class="sw"><i style="background:#C8246B"></i><small>C8246B</small></div>
-        <div class="sw"><i style="background:#EEF1F1"></i><small>EEF1F1</small></div>
-        <div class="sw"><i style="background:#5F686A"></i><small>5F686A</small></div>
+        <div class="sw"><i style="background:#E6028B"></i><small>E6028B</small></div>
+        <div class="sw"><i style="background:#F4C721"></i><small>F4C721</small></div>
+        <div class="sw"><i style="background:#1CA2DE"></i><small>1CA2DE</small></div>
+        <div class="sw"><i style="background:#16161A"></i><small>16161A</small></div>
+        <div class="sw"><i style="background:#FDF3F8"></i><small>FDF3F8</small></div>
       </div>
     </div>
 
     <div class="nota">
-      <h3>El magenta aparece una sola vez</h3>
-      <p>Está reservado exclusivamente para etiquetas de oferta. En toda la página de
-         inicio se usa en un solo lugar. Si el color de promoción está en todos lados,
-         deja de significar promoción — y el cliente deja de mirarlo.</p>
+      <h3>Sobre amarillo y celeste, texto negro</h3>
+      <p>No es un gusto, está medido: blanco sobre el amarillo de marca da 1.61 de
+         contraste, ilegible. Negro da 11.20. Lo mismo con el celeste. Y el fucsia
+         #E6028B sirve para títulos grandes pero se queda corto en botones, así que
+         ahí se usa #D1017E.</p>
     </div>
 
     <div class="nota">
-      <h3>Tipografía de cartel, no de catálogo</h3>
-      <p>Archivo es una grotesca industrial: tiene la contundencia de algo impreso.
-         Le da a la tienda voz de taller. Se evitó a propósito la tipografía neutra
-         que usa cualquier tienda online, porque justamente lo que Taxnara vende es
-         criterio visual.</p>
+      <h3>Tipografía redondeada, como el logo</h3>
+      <p>El "Taxnara!" del logo es un marcador grueso y redondeado. Poppins acompaña esa
+         energía sin competirle, y los bordes de 14px del resto de la interfaz siguen la
+         misma lógica: la marca es redonda, no angulosa.</p>
     </div>
 
     <div class="nota">
-      <h3>La trama de semitono del hero</h3>
-      <p>El fondo del banner no es un degradé: es una trama de puntos, la misma que
-         forma cualquier impresión. Se lee de lejos como textura y de cerca cuenta
-         qué hace el negocio.</p>
+      <h3>Las manchas de jirafa</h3>
+      <p>El motivo del fondo no es decoración genérica: son las manchas que ya están en
+         el logo y en las placas de Instagram. Repetirlas hace que la web se lea como
+         parte de la misma marca y no como algo pegado aparte.</p>
     </div>
 
     <div class="nota">
@@ -722,11 +722,10 @@ img,svg{max-width:100%}
       ya están cargados en la tienda, despublicados, esperando precio y fotos.
     </p>
     <ul>
-      <li><strong>El logo verdadero.</strong> Acá está tipografiado como marca de posición; va reemplazado por el PNG del logo de Taxnara.</li>
-      <li><strong>Los HEX del logo.</strong> Si el logo tiene otros colores, se cambian dos valores en <code>brand/tokens.css</code> y todo lo demás se reacomoda solo.</li>
+      <li><strong>El logo real ya está</strong> en <code>img/marca/logo-taxnara.png</code>, recortado y con fondo transparente.</li>
       <li><strong>Las fotos.</strong> Las siluetas son marcadores de posición. Las fotos reales del feed de Instagram son lo que va a vender.</li>
       <li><strong>Validar los precios contra tus costos.</strong> Están anclados al mercado, no a tu margen.</li>
-      <li><strong>WhatsApp, mail, CUIT y horarios.</strong></li>
+      <li><strong>Falta el mail y el CUIT.</strong> WhatsApp, dirección y horarios ya están cargados.</li>
     </ul>
   </div>
 </section>

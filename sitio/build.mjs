@@ -18,6 +18,22 @@ const wa = (texto) => CONTACTO.whatsapp
   ? `https://wa.me/${CONTACTO.whatsapp}?text=${encodeURIComponent(texto)}`
   : '#contacto';
 
+/** Manchas de jirafa, el motivo del logo, como textura de fondo. */
+const manchas = (color, opacidad = 1) => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">`
+    + `<g fill="${color}" opacity="${opacidad}">`
+    + `<path d="M28 18 74 8l22 30-14 34-40 6-20-26z"/>`
+    + `<path d="M120 30l44-14 26 26-8 36-42 10-24-24z"/>`
+    + `<path d="M206 6l40 12 6 34-30 20-24-22z"/>`
+    + `<path d="M12 96l38 8 12 34-22 30-34-6-8-38z"/>`
+    + `<path d="M96 106l52 6 16 36-30 28-44-10-8-38z"/>`
+    + `<path d="M196 96l46 10 10 32-28 26-36-10-6-36z"/>`
+    + `<path d="M40 190l44 4 14 34-26 26-40-8-6-34z"/>`
+    + `<path d="M136 194l48 2 14 32-32 26-38-10z"/>`
+    + `</g></svg>`;
+  return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+};
+
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // ---------------------------------------------------------------- secciones
@@ -65,34 +81,41 @@ const HTML = `<title>Taxnara Diseños</title>
 <meta name="description" content="Sublimación, bordado y estampado personalizado en Saujil, Catamarca. Remeras, buzos, gorras, tazas y ropa de trabajo con tu logo. Envíos a todo el país.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
 
 <style>
 :root{
-  --tinta:#15171C; --cian:#0F7C88; --cian-osc:#0A5C66; --magenta:#C8246B;
-  --papel:#EEF1F1; --sup:#FFFFFF; --humo:#5F686A; --linea:#D7DEDE;
-  --fondo:#FFFFFF; --texto:#15171C; --on-cian:#FFFFFF; --prenda:#15171C;
-  --bloque:#0A5C66; --barra:#15171C;
-  --sombra:0 1px 2px rgba(21,23,28,.05),0 10px 30px rgba(21,23,28,.06);
-  --ft:"Archivo","Oswald",system-ui,sans-serif;
-  --fb:"Work Sans","Barlow",system-ui,sans-serif;
-  --r:6px; --max:1160px;
+  /* Paleta medida sobre el logo real y la placa de horarios de Instagram */
+  --fucsia:#E6028B; --fucsia-btn:#D1017E; --fucsia-osc:#B00169;
+  --amarillo:#F4C721; --celeste:#1CA2DE; --tinta:#16161A;
+  --papel:#FDF3F8; --sup:#FFFFFF; --humo:#6B6470; --linea:#EBDFE6;
+  --fondo:#FFFFFF; --texto:#16161A;
+  --sobre-fucsia:#FFFFFF;   /* sobre el fucsia de botón */
+  --hero-bg:#E6028B; --hero-fg:#FFFFFF;   /* el hero no invierte con el tema */
+  --sobre-calido:#16161A;   /* sobre amarillo y celeste va SIEMPRE negro */
+  --prenda:#16161A;
+  --sombra:0 2px 4px rgba(22,22,26,.05),0 12px 32px rgba(230,2,139,.07);
+  --ft:"Poppins","Nunito Sans",system-ui,sans-serif;
+  --fb:"Nunito Sans","Work Sans",system-ui,sans-serif;
+  --r:14px; --max:1160px;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --tinta:#0B0D0F; --cian:#3FA6B0; --cian-osc:#5FC0C9; --magenta:#E8558E;
-    --papel:#15191B; --sup:#121517; --humo:#98A3A5; --linea:#262D30;
-    --fondo:#0B0D0F; --texto:#E8EDED; --on-cian:#06181A; --prenda:#C3CDCE;
-    --bloque:#0E3F46; --barra:#000000;
-    --sombra:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    --fucsia:#FF3DA5; --fucsia-btn:#FF3DA5; --fucsia-osc:#FF69B8;
+    --amarillo:#F4C721; --celeste:#45BEF2; --tinta:#0C0A10;
+    --papel:#1C1822; --sup:#171320; --humo:#A79FAE; --linea:#332B3B;
+    --fondo:#121016; --texto:#F3EDF2;
+    --sobre-fucsia:#12040C; --sobre-calido:#16161A; --prenda:#EFE7ED;
+    --sombra:0 2px 4px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.4);
   }
 }
 :root[data-theme="dark"]{
-  --tinta:#0B0D0F; --cian:#3FA6B0; --cian-osc:#5FC0C9; --magenta:#E8558E;
-  --papel:#15191B; --sup:#121517; --humo:#98A3A5; --linea:#262D30;
-  --fondo:#0B0D0F; --texto:#E8EDED; --on-cian:#06181A; --prenda:#C3CDCE;
-  --bloque:#0E3F46; --barra:#000000;
-  --sombra:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+  --fucsia:#FF3DA5; --fucsia-btn:#FF3DA5; --fucsia-osc:#FF69B8;
+  --amarillo:#F4C721; --celeste:#45BEF2; --tinta:#0C0A10;
+  --papel:#1C1822; --sup:#171320; --humo:#A79FAE; --linea:#332B3B;
+  --fondo:#121016; --texto:#F3EDF2;
+  --sobre-fucsia:#12040C; --sobre-calido:#16161A; --prenda:#EFE7ED;
+  --sombra:0 2px 4px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.4);
 }
 
 *{box-sizing:border-box}
@@ -103,65 +126,68 @@ h1,h2,h3,h4{font-family:var(--ft);margin:0;line-height:1.12;text-wrap:balance}
 p{margin:0}
 img{max-width:100%;display:block}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--cian);outline-offset:3px}
+:focus-visible{outline:2px solid var(--fucsia-btn);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
 /* --- avisos --- */
-.aviso{background:var(--barra);color:#E8EDED;text-align:center;font-size:13px;padding:9px 16px;letter-spacing:.02em}
-.aviso b{color:#fff;font-weight:600}
+.aviso{background:var(--hero-bg);color:var(--hero-fg);text-align:center;font-size:13.5px;padding:10px 16px;letter-spacing:.01em}
+.aviso b{color:var(--amarillo);font-weight:700}
 
 /* --- header --- */
 .head{position:sticky;top:0;z-index:20;background:var(--sup);border-bottom:1px solid var(--linea)}
-.head-in{display:flex;align-items:center;gap:28px;height:74px}
+.head-in{display:flex;align-items:center;gap:28px;height:82px}
 .marca{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
-.marca svg{color:var(--cian);flex:none}
-.marca strong{font-family:var(--ft);font-weight:800;font-size:22px;letter-spacing:-.02em;display:block;line-height:1}
+.marca img{width:64px;height:64px;border-radius:50%;flex:none;background:#fff;
+  box-shadow:0 0 0 2px var(--linea)}
+.marca strong{font-family:var(--ft);font-weight:800;font-size:23px;letter-spacing:-.02em;display:block;
+  line-height:1;color:var(--fucsia-btn)}
 .marca em{font-style:normal;font-family:var(--ft);font-size:9px;font-weight:600;
   letter-spacing:.34em;color:var(--humo);display:block;margin-top:3px}
 .nav{display:flex;gap:22px;margin-left:auto;font-size:14.5px;font-weight:500}
 .nav a{text-decoration:none;padding:5px 0;border-bottom:2px solid transparent;white-space:nowrap}
-.nav a:hover{border-bottom-color:var(--cian);color:var(--cian)}
+.nav a:hover{border-bottom-color:var(--fucsia-btn);color:var(--fucsia-btn)}
 @media (max-width:940px){.nav{display:none}}
 
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--ft);font-weight:700;
   font-size:15px;padding:14px 26px;border-radius:var(--r);text-decoration:none;border:2px solid transparent}
-.btn-cian{background:var(--cian);color:var(--on-cian)}
-.btn-cian:hover{background:var(--cian-osc)}
+.btn-fucsia{background:var(--fucsia-btn);color:#FFFFFF}
+.btn-amarillo{background:var(--amarillo);color:var(--sobre-calido)}
+.btn-amarillo:hover{background:#FFD84D}
+.btn-fucsia:hover{background:var(--fucsia-osc)}
 .btn-linea{border-color:var(--linea);color:var(--texto)}
-.btn-linea:hover{border-color:var(--cian);color:var(--cian)}
-.btn-claro{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-linea:hover{border-color:var(--fucsia-btn);color:var(--fucsia-btn)}
+.btn-claro{border-color:rgba(255,255,255,.55);color:var(--hero-fg)}
 .btn-sm{padding:10px 18px;font-size:13.5px}
 .head .btn{margin-left:auto}
 @media (max-width:940px){.head .btn{margin-left:auto}}
 
 /* --- hero --- */
-.hero{position:relative;background:var(--tinta);color:#fff;overflow:hidden}
+.hero{position:relative;background:var(--hero-bg);color:var(--hero-fg);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;
-  background-image:radial-gradient(circle at center,rgba(255,255,255,.13) 1.4px,transparent 1.5px);
-  background-size:11px 11px}
-.hero::after{content:"";position:absolute;right:-160px;top:-180px;width:660px;height:660px;border-radius:50%;
-  background:radial-gradient(circle,var(--cian) 0%,transparent 65%);opacity:.38}
+  background-image:__MANCHAS_HERO__;background-size:290px 290px;opacity:.13}
+.hero::after{content:"";position:absolute;right:-140px;bottom:-190px;width:520px;height:520px;
+  border-radius:50%;background:var(--amarillo);opacity:.2}
 .hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;
   align-items:center;padding:84px 24px 92px}
-.volanta{font-family:var(--ft);font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-  color:#7FD3DC;display:flex;align-items:center;gap:12px;margin-bottom:22px}
-.volanta::before{content:"";width:34px;height:2px;background:#7FD3DC;flex:none}
+.volanta{font-family:var(--ft);font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--amarillo);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.volanta::before{content:"";width:34px;height:3px;border-radius:2px;background:var(--amarillo);flex:none}
 .hero h1{font-size:clamp(36px,5.4vw,60px);font-weight:800;letter-spacing:-.03em}
-.hero-sub{margin-top:20px;font-size:17px;color:#C3CDCE;max-width:46ch}
+.hero-sub{margin-top:20px;font-size:17.5px;color:var(--hero-fg);opacity:.94;max-width:46ch}
 .hero-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}
 .hero-art{display:flex;justify-content:center}
 .hero-art img{width:min(380px,84%);filter:drop-shadow(0 24px 44px rgba(0,0,0,.5))}
 @media (max-width:880px){.hero-in{grid-template-columns:1fr;padding:56px 24px 64px;gap:36px}.hero-art{order:-1}}
 
 /* --- franja --- */
-.franja{background:var(--papel);border-bottom:1px solid var(--linea)}
+.franja{background:var(--amarillo);color:var(--sobre-calido)}
 .franja ul{list-style:none;margin:0 auto;padding:24px;max-width:var(--max);
   display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .franja li{display:flex;gap:11px;align-items:flex-start}
-.franja svg{flex:none;color:var(--cian);margin-top:2px}
+.franja svg{flex:none;color:var(--sobre-calido);margin-top:2px}
 .franja strong{display:block;font-family:var(--ft);font-size:13.5px;font-weight:700}
-.franja span span{font-size:12.5px;color:var(--humo);line-height:1.45}
+.franja span span{font-size:12.5px;color:var(--sobre-calido);opacity:.78;line-height:1.45}
 @media (max-width:820px){.franja ul{grid-template-columns:repeat(2,1fr)}}
 
 /* --- secciones --- */
@@ -169,7 +195,7 @@ a{color:inherit}
 .sec-papel{background:var(--papel)}
 .sec-cab{max-width:56ch;margin-bottom:38px}
 .eyebrow{font-family:var(--ft);font-size:11.5px;font-weight:700;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--cian);margin-bottom:12px}
+  text-transform:uppercase;color:var(--fucsia-btn);margin-bottom:12px}
 .sec-cab h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.02em}
 .sec-cab p{color:var(--humo);margin-top:14px;font-size:16.5px}
 
@@ -189,7 +215,7 @@ a{color:inherit}
 .rejilla{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .ficha{background:var(--sup);border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;
   display:flex;flex-direction:column;transition:border-color .18s ease,transform .18s ease}
-.ficha:hover{border-color:var(--cian);transform:translateY(-3px)}
+.ficha:hover{border-color:var(--fucsia-btn);transform:translateY(-3px)}
 .ficha-img{aspect-ratio:1;background:var(--papel);display:grid;place-items:center;padding:12%}
 .ficha-txt{padding:15px 16px 18px;display:flex;flex-direction:column;gap:5px;flex:1}
 .ficha h4{font-size:15.5px;font-weight:600;line-height:1.3}
@@ -204,12 +230,12 @@ a{color:inherit}
 .segmento h3{font-size:21px;font-weight:700;margin-bottom:10px}
 .segmento p{font-size:15px;color:var(--humo)}
 .enlace{display:inline-block;margin-top:16px;font-family:var(--ft);font-weight:600;font-size:14px;
-  color:var(--cian);text-decoration:none;border-bottom:2px solid var(--cian);padding-bottom:2px}
+  color:var(--fucsia-btn);text-decoration:none;border-bottom:2px solid var(--fucsia-btn);padding-bottom:2px}
 @media (max-width:820px){.segmentos{grid-template-columns:1fr}}
 
 /* --- pasos --- */
 .pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-.paso-n{font-family:var(--ft);font-weight:800;font-size:13px;color:var(--cian);
+.paso-n{font-family:var(--ft);font-weight:800;font-size:13px;color:var(--fucsia-btn);
   display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .paso-n::after{content:"";height:1px;background:var(--linea);flex:1}
 .paso h3{font-size:17.5px;font-weight:700;margin-bottom:7px}
@@ -221,11 +247,11 @@ a{color:inherit}
 .taller-txt{background:var(--tinta);color:#fff;padding:64px 52px;display:flex;flex-direction:column;
   justify-content:center;gap:18px}
 .taller-txt h2{font-size:clamp(26px,3.2vw,34px);font-weight:800;letter-spacing:-.02em}
-.taller-txt p{color:#C3CDCE;font-size:15.5px}
+.taller-txt p{color:#DCD3DA;font-size:15.5px}
 .taller-txt .btn{align-self:flex-start;margin-top:10px}
-.taller-img{background:var(--bloque);display:grid;place-items:center;padding:48px;position:relative;overflow:hidden}
+.taller-img{background:var(--amarillo);display:grid;place-items:center;padding:48px;position:relative;overflow:hidden}
 .taller-img::before{content:"";position:absolute;inset:0;
-  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.07) 0 2px,transparent 2px 7px)}
+  background-image:__MANCHAS_BLOQUE__;background-size:230px 230px;opacity:.55}
 .taller-img img{width:min(300px,78%);position:relative;z-index:1}
 @media (max-width:880px){.taller{grid-template-columns:1fr}.taller-txt{padding:48px 24px}}
 
@@ -233,28 +259,29 @@ a{color:inherit}
 .contacto{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
 .datos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
 .datos li{display:flex;gap:13px;align-items:flex-start}
-.datos svg{flex:none;color:var(--cian);margin-top:3px}
+.datos svg{flex:none;color:var(--fucsia-btn);margin-top:3px}
 .datos strong{display:block;font-family:var(--ft);font-size:12px;font-weight:700;
   letter-spacing:.14em;text-transform:uppercase;color:var(--humo);margin-bottom:2px}
 .datos a{text-decoration:none}
-.datos a:hover{color:var(--cian)}
+.datos a:hover{color:var(--fucsia-btn)}
 .pendiente{color:var(--magenta);font-weight:600}
 @media (max-width:820px){.contacto{grid-template-columns:1fr;gap:32px}}
 
 /* --- pie --- */
-.pie{background:var(--tinta);color:#C3CDCE;padding:54px 0 24px;font-size:14px}
+.pie{background:var(--tinta);color:#CFC6CE;padding:54px 0 24px;font-size:14px}
 .pie-cols{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px}
 .pie h4{font-family:var(--ft);color:#fff;font-size:12px;font-weight:700;letter-spacing:.16em;
   text-transform:uppercase;margin-bottom:14px}
 .pie ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
 .pie a{text-decoration:none}
-.pie a:hover{color:#7FD3DC}
-.pie-marca strong{font-family:var(--ft);font-weight:800;font-size:21px;color:#fff;letter-spacing:-.02em;display:block}
+.pie a:hover{color:var(--amarillo)}
+.pie-marca img{width:72px;height:72px;border-radius:50%;background:#fff;margin-bottom:14px}
+.pie-marca strong{font-family:var(--ft);font-weight:800;font-size:22px;color:#fff;letter-spacing:-.02em;display:block}
 .pie-marca p{margin-top:12px;line-height:1.6;max-width:34ch}
 .redes{display:flex;gap:10px;margin-top:18px}
 .redes a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:var(--r);
   display:grid;place-items:center;color:#C3CDCE}
-.redes a:hover{border-color:#7FD3DC;color:#7FD3DC}
+.redes a:hover{border-color:var(--amarillo);color:var(--amarillo)}
 .pie-bajo{border-top:1px solid rgba(255,255,255,.13);margin-top:38px;padding-top:20px;
   display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12.5px;color:#8B9698}
 @media (max-width:820px){.pie-cols{grid-template-columns:1fr 1fr}}
@@ -265,11 +292,8 @@ a{color:inherit}
 <header class="head">
   <div class="wrap head-in">
     <a class="marca" href="#inicio">
-      <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" aria-hidden="true">
-        <circle cx="50" cy="50" r="26"/><circle cx="50" cy="50" r="11"/>
-        <path d="M50 6v30M50 64v30M6 50h30M64 50h30" stroke-linecap="round"/>
-      </svg>
-      <span><strong>TAXNARA</strong><em>DISEÑOS</em></span>
+      <img src="__LOGO__" alt="Taxnara Diseños" width="64" height="64">
+      <span><strong>Taxnara</strong><em>DISEÑOS</em></span>
     </a>
     <nav class="nav" aria-label="Menú principal">
       <a href="#tecnicas">Qué hacemos</a>
@@ -278,7 +302,7 @@ a{color:inherit}
       <a href="#como">Cómo trabajamos</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn btn-cian btn-sm" href="${wa('Hola Taxnara, quiero pedir un presupuesto.')}">Pedir presupuesto</a>
+    <a class="btn btn-fucsia btn-sm" href="${wa('Hola Taxnara, quiero pedir un presupuesto.')}">Pedir presupuesto</a>
   </div>
 </header>
 
@@ -291,7 +315,7 @@ a{color:inherit}
         <p class="hero-sub">Lo que en tu logo es un archivo, acá se vuelve una prenda que alguien usa
           todos los días. Taller propio en Saujil, Catamarca, con envíos a todo el país.</p>
         <div class="hero-cta">
-          <a class="btn btn-cian" href="${wa('Hola Taxnara, quiero pedir un presupuesto.')}">Pedir presupuesto</a>
+          <a class="btn btn-amarillo" href="${wa('Hola Taxnara, quiero pedir un presupuesto.')}">Pedir presupuesto</a>
           <a class="btn btn-claro" href="#catalogo">Ver el catálogo</a>
         </div>
       </div>
@@ -355,9 +379,9 @@ a{color:inherit}
         nuevo al equipo, pedís la reposición y sale idéntica a la del primer día.</p>
       <p>Si el archivo que tenés no sirve para bordar, te lo decimos antes y lo vectorizamos.
         Preferimos perder una venta a entregar algo que no nos gusta.</p>
-      <a class="btn btn-cian" href="${wa('Hola Taxnara, quiero consultar por indumentaria para mi empresa.')}">Consultar para mi empresa</a>
+      <a class="btn btn-fucsia" href="${wa('Hola Taxnara, quiero consultar por indumentaria para mi empresa.')}">Consultar para mi empresa</a>
     </div>
-    <div class="taller-img"><img src="__OSC:bordado-de-logo__" alt="Bastidor de bordado"></div>
+    <div class="taller-img"><img src="__TINTA:bordado-de-logo__" alt="Bastidor de bordado"></div>
   </section>
 
   <section class="sec sec-papel" id="como">
@@ -384,7 +408,7 @@ a{color:inherit}
           <strong>para cuándo</strong> lo necesitás. Con eso te contestamos con el presupuesto
           en el primer mensaje.</p>
         <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn btn-cian" href="${wa('Hola Taxnara, quiero pedir un presupuesto.')}">Escribir por WhatsApp</a>
+          <a class="btn btn-fucsia" href="${wa('Hola Taxnara, quiero pedir un presupuesto.')}">Escribir por WhatsApp</a>
           <a class="btn btn-linea" href="${CONTACTO.tienda}">Ver la tienda online</a>
         </div>
       </div>
@@ -406,7 +430,8 @@ a{color:inherit}
   <div class="wrap">
     <div class="pie-cols">
       <div class="pie-marca">
-        <strong>TAXNARA</strong>
+        <img src="__LOGO__" alt="Taxnara Diseños" width="72" height="72">
+        <strong>Taxnara</strong>
         <p>Sublimación, bordado y estampado personalizado.<br>${esc(CONTACTO.direccion)}.</p>
         <div class="redes">
           <a href="${CONTACTO.instagram}" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -445,6 +470,10 @@ a{color:inherit}
 
 function escribir(destino, resolverImagen) {
   const salida = HTML
+    .replace(/__MANCHAS_HERO__/g,   manchas('#FFFFFF'))
+    .replace(/__MANCHAS_BLOQUE__/g, manchas('#16161A', 0.14))
+    .replace(/__LOGO__/g,           resolverImagen('logo-taxnara', 'marca'))
+    .replace(/__TINTA:([a-z0-9-]+)__/g, (_, n) => resolverImagen(n, 'productos-tinta'))
     .replace(/__IMG:([a-z0-9-]+)__/g,  (_, n) => resolverImagen(n, 'productos'))
     .replace(/__OSC:([a-z0-9-]+)__/g, (_, n) => resolverImagen(n, 'productos-oscuro'));
   fs.writeFileSync(path.join(AQUI, destino), salida);

@@ -45,8 +45,8 @@ aclaración *"Se abona al retirar en Av. Señor del Milagro 645"*.
 
 ### 1. Retiro en el local — $0
 - Nombre: `Retiro en el taller (Saujil)`
-- Dirección: Av. Señor del Milagro 645, Saujil, Catamarca
-- Horario: ⟨COMPLETAR⟩
+- Dirección: Av. Señor del Milagro 645 — Saujil, Pomán, Catamarca
+- Horario: lunes a viernes de 9 a 13 y de 16 a 20
 - Plazo: `Te avisamos por WhatsApp cuando esté listo`
 
 ### 2. Envío propio en la zona

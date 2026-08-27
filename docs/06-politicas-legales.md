@@ -28,7 +28,7 @@ Tiene que ser un enlace visible y directo, no escondido dentro de los Términos.
 
 Esta tienda es operada por **⟨COMPLETAR: razón social⟩**, CUIT **⟨COMPLETAR⟩**,
 con domicilio en Av. Señor del Milagro 645, Saujil, provincia de Catamarca,
-República Argentina. Contacto: **⟨COMPLETAR: mail⟩** · **⟨COMPLETAR: teléfono⟩**.
+República Argentina. Contacto: **⟨COMPLETAR: mail⟩** · **+54 9 3834 94-2223**.
 
 Al comprar en este sitio aceptás estos términos.
 
@@ -159,7 +159,7 @@ Completá el formulario con:
 - Mail o teléfono de contacto
 - Producto que querés devolver
 
-También podés escribirnos a **⟨COMPLETAR: mail⟩** o al **⟨COMPLETAR: teléfono⟩**.
+También podés escribirnos a **⟨COMPLETAR: mail⟩** o al **+54 9 3834 94-2223**.
 
 Nos comunicamos dentro de las 48 horas hábiles para coordinar el retiro sin cargo.
 El reintegro se hace por el mismo medio de pago dentro de los 10 días hábiles de

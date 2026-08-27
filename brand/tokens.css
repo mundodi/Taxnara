@@ -1,67 +1,76 @@
 /* ============================================================
    TAXNARA DISEÑOS — Tokens de marca
    ------------------------------------------------------------
-   Un solo lugar para los colores y tipografías de la tienda.
+   Colores medidos sobre el logo real y la placa de horarios
+   de Instagram, no elegidos a ojo:
 
-   La paleta sale del oficio: son las tintas de cuatricromía
-   (negro, cian, magenta) sobre papel. Es el mismo sistema de
-   color con el que se estampa y se sublima.
+     fucsia   #E6028B   el "Taxnara!" y el fondo de las placas
+     amarillo #F4C721   los lentes corazón, el moño, la tarjeta
+     celeste  #1CA2DE   las manchas de la jirafa
+     tinta    #16161A   el trazo del dibujo
 
-   ⟨COMPLETAR⟩ Reemplazá los HEX por los exactos del logo.
-   Para sacarlos: abrí el logo en Canva o en imagecolorpicker.com
-   y copiá el código de cada color.
-
-   Dónde se cargan en Tiendanube:
-   Panel → Mi tienda online → Diseño → Personalizar → Colores
+   Logo: img/marca/logo-taxnara.png (fondo transparente)
    ============================================================ */
 
 :root {
-  /* --- Principales ------------------------------------------------ */
-  --tx-tinta:    #15171C;  /* Negro tinta. Header, footer, títulos.    */
-  --tx-cian:     #0F7C88;  /* Acento. Botones, links, íconos.          */
-  --tx-cian-osc: #0A5C66;  /* Hover de botones.                        */
-  --tx-papel:    #EEF1F1;  /* Fondo de secciones. Papel bajo la prensa.*/
-  --tx-blanco:   #FFFFFF;  /* Fondo general y fichas de producto.      */
+  /* --- Marca ------------------------------------------------------- */
+  --tx-fucsia:      #E6028B;  /* Color de marca. Títulos grandes, fondos. */
+  --tx-fucsia-btn:  #D1017E;  /* Botones y links: contraste AA en blanco. */
+  --tx-fucsia-osc:  #B00169;  /* Hover de botones.                        */
+  --tx-amarillo:    #F4C721;  /* Bloques destacados, etiquetas.           */
+  --tx-celeste:     #1CA2DE;  /* Acento y manchas de jirafa.              */
+  --tx-tinta:       #16161A;  /* Textos y trazo.                          */
 
   /* --- Apoyo ------------------------------------------------------- */
-  --tx-magenta:  #C8246B;  /* SOLO ofertas y etiquetas de promo.       */
-  --tx-humo:     #5F686A;  /* Texto secundario, descripciones.         */
-  --tx-linea:    #D7DEDE;  /* Bordes, separadores, tablas.             */
-  --tx-ok:       #2E6F4E;  /* "Envío gratis", stock, mensajes de éxito.*/
+  --tx-blanco:      #FFFFFF;
+  --tx-papel:       #FDF3F8;  /* Blanco con un susurro de fucsia.         */
+  --tx-humo:        #6B6470;  /* Texto secundario.                        */
+  --tx-linea:       #EBDFE6;  /* Bordes y separadores.                    */
+  --tx-ok:          #2E7D4F;  /* Stock, envío gratis.                     */
 
   /* --- Tipografías -------------------------------------------------
-     Las dos están en Google Fonts y en el selector de Tiendanube.
-     Archivo es una grotesca industrial: tiene la contundencia de
-     un cartel impreso sin caer en la tipografía de siempre.        */
-  --tx-font-titulo: "Archivo", "Oswald", system-ui, sans-serif;
-  --tx-font-texto:  "Work Sans", "Barlow", system-ui, sans-serif;
+     El "Taxnara!" del logo es un marcador grueso y redondeado.
+     Poppins acompaña esa energía sin competirle.                     */
+  --tx-font-titulo: "Poppins", "Nunito Sans", system-ui, sans-serif;
+  --tx-font-texto:  "Nunito Sans", "Work Sans", system-ui, sans-serif;
 
-  /* --- Formas ------------------------------------------------------ */
-  --tx-radio:      6px;    /* Botones y fichas. Poco redondeo: oficio. */
-  --tx-radio-chip: 999px;  /* Etiquetas y filtros.                     */
+  /* --- Formas ------------------------------------------------------
+     La marca es redondeada: el radio acompaña.                       */
+  --tx-radio:       14px;
+  --tx-radio-chip:  999px;
 }
 
 /* ============================================================
-   CSS opcional para el campo "CSS personalizado" del tema.
-   Está en: Diseño → Personalizar → Avanzado → CSS personalizado.
-   Si tu plan o tu tema no muestra ese campo, ignorá esta parte:
-   los colores ya se configuran desde el panel visual.
+   REGLAS DE CONTRASTE — no son opcionales, están medidas
+   ------------------------------------------------------------
+   Sobre AMARILLO y CELESTE va SIEMPRE texto NEGRO:
+     tinta sobre amarillo .... 11.20 ✓
+     blanco sobre amarillo .... 1.61 ✗ ilegible
+     tinta sobre celeste ...... 6.25 ✓
+     blanco sobre celeste ..... 2.89 ✗
+
+   Sobre FUCSIA va texto BLANCO, pero:
+     #E6028B .... 4.42  solo títulos grandes
+     #D1017E .... 5.23  ✓ botones y texto normal
+   ============================================================ */
+
+/* ============================================================
+   CSS opcional para "Diseño → Personalizar → CSS personalizado"
    ============================================================ */
 
 .btn-primary,
 .js-addtocart {
-  background-color: var(--tx-cian);
-  border-color: var(--tx-cian);
+  background-color: var(--tx-fucsia-btn);
+  border-color: var(--tx-fucsia-btn);
   border-radius: var(--tx-radio);
   font-family: var(--tx-font-titulo);
   font-weight: 700;
-  letter-spacing: .01em;
 }
 
 .btn-primary:hover,
 .js-addtocart:hover {
-  background-color: var(--tx-cian-osc);
-  border-color: var(--tx-cian-osc);
+  background-color: var(--tx-fucsia-osc);
+  border-color: var(--tx-fucsia-osc);
 }
 
 .item-price,
@@ -72,23 +81,23 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Etiqueta de oferta: el magenta va acá y en ningún otro lado */
+/* Etiqueta de oferta: amarillo con texto negro */
 .item-offer,
 .tx-badge-oferta {
-  background: var(--tx-magenta);
-  color: #fff;
+  background: var(--tx-amarillo);
+  color: var(--tx-tinta);
   border-radius: var(--tx-radio-chip);
+  font-weight: 700;
 }
 
-/* Etiqueta de producto personalizable */
 .tx-badge-personalizable {
   display: inline-block;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: var(--tx-radio-chip);
   background: var(--tx-papel);
-  color: var(--tx-cian-osc);
+  color: var(--tx-fucsia-osc);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .06em;
+  font-weight: 700;
+  letter-spacing: .04em;
   text-transform: uppercase;
 }
