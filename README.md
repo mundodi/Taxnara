@@ -11,6 +11,9 @@ más identidad, textos, políticas legales, envíos, pagos y SEO listos para peg
 > **Todo está despublicado**: nadie lo ve ni lo puede comprar todavía. Falta
 > ponerle los precios reales y las fotos, y recién ahí publicar.
 >
+> Está cargado como **catálogo de exhibición: con imagen y sin precio**, porque
+> Taxnara cotiza a medida. Cada ficha cierra invitando a pedir presupuesto.
+>
 > El detalle completo está en [`docs/10-estado-de-la-tienda.md`](docs/10-estado-de-la-tienda.md).
 
 > **Taxnara Diseños** · Sublimación, bordado y estampado personalizado
@@ -37,9 +40,12 @@ No hace falta saber programar: todo se carga desde el administrador.
 | [`docs/08-seo-y-redes.md`](docs/08-seo-y-redes.md) | Títulos y descripciones SEO, link en bio, plan de contenido |
 | [`docs/09-pedidos-personalizados.md`](docs/09-pedidos-personalizados.md) | El flujo del trabajo a medida dentro de una tienda online |
 | [`docs/10-estado-de-la-tienda.md`](docs/10-estado-de-la-tienda.md) | **Qué quedó cargado en la tienda y qué falta** |
+| [`docs/11-la-pagina-web.md`](docs/11-la-pagina-web.md) | **La página web: cómo editarla y publicarla** |
 | [`import/productos-taxnara.csv`](import/productos-taxnara.csv) | El mismo catálogo en CSV, como respaldo |
 | [`brand/tokens.css`](brand/tokens.css) | Colores y tipografías en un solo lugar |
-| [`preview/index.html`](preview/index.html) | Maqueta visual de cómo queda el inicio |
+| [`sitio/`](sitio) | **La página web**, lista para publicar |
+| [`img/`](img) | Imágenes de exhibición de los productos, con su generador |
+| [`preview/index.html`](preview/index.html) | Maqueta visual del inicio de la tienda |
 
 ---
 
@@ -52,8 +58,7 @@ Facebook y TikTok). Están marcados en todos los archivos como `⟨COMPLETAR⟩`
 - **Teléfono / WhatsApp de ventas**
 - **CUIT y razón social** (obligatorio para facturar y para los Términos)
 - **Mail de contacto** de la tienda
-- **Precios reales** → los cargados son de referencia, no son cotizaciones.
-  Filtrá por el tag `REVISAR PRECIO` en el panel para verlos todos
+- **Fotos reales** → las del catálogo son ilustraciones provisorias
 - **Fotos de producto** → las mejores ya están en el feed de Instagram
 
 ---
@@ -67,6 +72,6 @@ El catálogo se cargó por la API, pero hay cosas que solo se hacen desde el pan
 - Subir las **fotos de cada producto**
 - Crear las **páginas** (Nosotros, FAQ, legales, contacto)
 - Configurar **formas de envío**
-- Poner los **precios reales** y publicar
+- Publicar
 
 Cada una tiene su documento con el contenido listo para copiar y pegar.

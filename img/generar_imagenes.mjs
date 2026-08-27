@@ -14,6 +14,7 @@ import path from 'path';
 
 const TINTA = '#15171C';
 const CIAN  = '#0F7C88';
+const CIAN_CLARO = '#7FD3DC';   // acento sobre fondos oscuros
 const SALIDA = path.join(path.dirname(new URL(import.meta.url).pathname), 'productos');
 
 /** Marca de registro de imprenta: señala el punto de personalización. */
@@ -157,24 +158,36 @@ const PRODUCTOS = [
    reg(126, 128, 14)],
 ];
 
-const svg = (cuerpo, acento, texto = '') => `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#FFFFFF"/>
-  <g fill="none" stroke="${TINTA}" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">${cuerpo}</g>
-  <g fill="none" stroke="${CIAN}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">${acento}</g>
-  <g fill="${CIAN}" font-family="Archivo, Arial Black, sans-serif" font-weight="800"
+const svg = (cuerpo, acento, texto = '', { fondo = true, trazo = TINTA, marca = CIAN } = {}) =>
+`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 200 200">
+  ${fondo ? '<rect width="200" height="200" fill="#FFFFFF"/>' : ''}
+  <g fill="none" stroke="${trazo}" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">${cuerpo}</g>
+  <g fill="none" stroke="${marca}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">${acento}</g>
+  <g fill="${marca}" font-family="Archivo, Arial Black, sans-serif" font-weight="800"
      text-anchor="middle" dominant-baseline="central">${texto}</g>
 </svg>`;
 
+const SALIDA_OSC = SALIDA + '-oscuro';
 fs.mkdirSync(SALIDA, { recursive: true });
+fs.mkdirSync(SALIDA_OSC, { recursive: true });
 const navegador = await chromium.launch();
 const pagina = await navegador.newPage({ viewport: { width: 1200, height: 1200 } });
 
 for (const [nombre, cuerpo, acento, texto] of PRODUCTOS) {
+  // 1) fondo blanco: es la que va a la tienda
   await pagina.setContent(
     `<style>html,body{margin:0;padding:0;background:#fff}svg{display:block}</style>${svg(cuerpo, acento, texto)}`);
   await pagina.screenshot({ path: path.join(SALIDA, `${nombre}.png`) });
+
+  // 2) trazo blanco y acento claro, fondo transparente: para fondos oscuros de la web
+  await pagina.setContent(
+    `<style>html,body{margin:0;padding:0}svg{display:block}</style>` +
+    svg(cuerpo, acento, texto, { fondo: false, trazo: '#FFFFFF', marca: CIAN_CLARO }));
+  await pagina.screenshot({ path: path.join(SALIDA_OSC, `${nombre}.png`), omitBackground: true });
+
   process.stdout.write(`· ${nombre}\n`);
 }
 
 await navegador.close();
 console.log(`\n${PRODUCTOS.length} imágenes en ${SALIDA}`);
+console.log(`${PRODUCTOS.length} en versión clara (fondos oscuros) en ${SALIDA_OSC}`);
