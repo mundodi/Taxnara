@@ -52,7 +52,7 @@ const catalogo = CATALOGO.map(g => `
             <div class="ficha-txt">
               <h4>${esc(i.n)}</h4>
               <p class="ficha-v">${esc(i.v)}</p>
-              <p class="ficha-p">Precio a consultar</p>
+              <p class="ficha-p">${esc(i.p)}</p>
             </div>
           </li>`).join('')}
         </ul>
@@ -194,8 +194,8 @@ a{color:inherit}
 .ficha-txt{padding:15px 16px 18px;display:flex;flex-direction:column;gap:5px;flex:1}
 .ficha h4{font-size:15.5px;font-weight:600;line-height:1.3}
 .ficha-v{font-size:12.5px;color:var(--humo)}
-.ficha-p{margin-top:auto;padding-top:9px;font-family:var(--ft);font-weight:700;font-size:13px;
-  letter-spacing:.04em;text-transform:uppercase;color:var(--cian)}
+.ficha-p{margin-top:auto;padding-top:9px;font-family:var(--ft);font-weight:700;font-size:17px;
+  color:var(--texto);font-variant-numeric:tabular-nums}
 @media (max-width:900px){.rejilla{grid-template-columns:repeat(2,1fr)}}
 
 /* --- segmentos --- */
@@ -330,8 +330,9 @@ a{color:inherit}
       <div class="sec-cab">
         <p class="eyebrow">Catálogo</p>
         <h2>Todo lo que sale del taller</h2>
-        <p>Trabajamos a medida, así que el precio depende de la cantidad, la técnica y el diseño.
-          Por eso no publicamos lista: escribinos y te pasamos el presupuesto cerrado el mismo día.</p>
+        <p>Los precios son por unidad y ya incluyen la personalización. Desde 10 unidades hay
+          descuento por cantidad: <strong>−5%</strong> de 10 a 24, <strong>−10%</strong> de 25 a 49
+          y <strong>−15%</strong> de 50 en adelante.</p>
       </div>${catalogo}
     </div>
   </section>

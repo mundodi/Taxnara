@@ -46,36 +46,40 @@ export const PASOS = [
   { n: '4', t: 'Producimos y entregamos', d: 'Retirás en el taller o te lo enviamos con seguimiento a todo el país.' },
 ];
 
-/** El catálogo de exhibición: los mismos 22 productos que están en la tienda. */
+/**
+ * El catálogo: los mismos 22 productos que están en la tienda, con su precio.
+ * Los precios salen de docs/12-precios-y-mercado.md — si los cambiás en la
+ * tienda, cambialos también acá y regenerá el sitio.
+ */
 export const CATALOGO = [
   { grupo: 'Indumentaria', items: [
-    { img: 'remera',               n: 'Remera de algodón personalizada', v: 'Talles S a XXL · 3 colores' },
-    { img: 'remera-oversize',      n: 'Remera oversize personalizada',   v: 'Talles S a XL · 3 colores' },
-    { img: 'buzo-canguro',         n: 'Buzo canguro personalizado',      v: 'Talles S a XXL · 3 colores' },
-    { img: 'buzo-cuello-redondo',  n: 'Buzo cuello redondo',             v: 'Talles S a XXL · 3 colores' },
-    { img: 'campera-rompevientos', n: 'Campera rompevientos bordada',    v: 'Talles S a XXL · 3 colores' },
-    { img: 'chomba-pique',         n: 'Chomba piqué con logo bordado',   v: 'Talles S a XXL · 3 colores' },
-    { img: 'gorra',                n: 'Gorra de gabardina bordada',      v: 'Talle único · 4 colores' },
+    { img: 'remera',               n: 'Remera de algodón personalizada', v: 'Talles S a XXL · 3 colores', p: '$22.900' },
+    { img: 'remera-oversize',      n: 'Remera oversize personalizada',   v: 'Talles S a XL · 3 colores', p: '$29.900' },
+    { img: 'buzo-canguro',         n: 'Buzo canguro personalizado',      v: 'Talles S a XXL · 3 colores', p: '$52.900' },
+    { img: 'buzo-cuello-redondo',  n: 'Buzo cuello redondo',             v: 'Talles S a XXL · 3 colores', p: '$42.900' },
+    { img: 'campera-rompevientos', n: 'Campera rompevientos bordada',    v: 'Talles S a XXL · 3 colores', p: '$74.900' },
+    { img: 'chomba-pique',         n: 'Chomba piqué con logo bordado',   v: 'Talles S a XXL · 3 colores', p: '$38.900' },
+    { img: 'gorra',                n: 'Gorra de gabardina bordada',      v: 'Talle único · 4 colores', p: '$16.900' },
   ]},
   { grupo: 'Personalizados por encargo', items: [
-    { img: 'kit-egresados',        n: 'Kit egresados — buzo + nombre',   v: 'Desde 15 unidades' },
-    { img: 'indumentaria-laboral', n: 'Indumentaria laboral bordada',    v: 'Chomba, camisa, buzo o campera' },
-    { img: 'camiseta-club',        n: 'Camiseta de club sublimada',      v: 'Talles de niño y adulto · desde 10 u.' },
-    { img: 'set-regaleria',        n: 'Set de regalería empresarial',    v: '3 combos, en caja' },
+    { img: 'kit-egresados',        n: 'Kit egresados — buzo + nombre',   v: 'Desde 15 unidades', p: '$52.900' },
+    { img: 'indumentaria-laboral', n: 'Indumentaria laboral bordada',    v: 'Chomba, camisa, buzo o campera', p: 'desde $36.900' },
+    { img: 'camiseta-club',        n: 'Camiseta de club sublimada',      v: 'Talles de niño y adulto · desde 10 u.', p: 'desde $21.900' },
+    { img: 'set-regaleria',        n: 'Set de regalería empresarial',    v: '3 combos, en caja', p: 'desde $15.900' },
   ]},
   { grupo: 'Sublimados', items: [
-    { img: 'taza-ceramica',        n: 'Taza de cerámica sublimada',      v: '11 oz · impresión 360°' },
-    { img: 'taza-magica',          n: 'Taza mágica personalizada',       v: 'Revela el diseño con el calor' },
-    { img: 'almohadon',            n: 'Almohadón sublimado 40×40',       v: 'Con foto, logo o frase' },
-    { img: 'mouse-pad',            n: 'Mouse pad personalizado',         v: 'Estándar y gamer' },
-    { img: 'botella-deportiva',    n: 'Botella deportiva personalizada', v: '750 ml · 3 colores' },
-    { img: 'termo-acero',          n: 'Termo de acero personalizado',    v: '750 ml y 1 litro' },
+    { img: 'taza-ceramica',        n: 'Taza de cerámica sublimada',      v: '11 oz · impresión 360°', p: '$8.900' },
+    { img: 'taza-magica',          n: 'Taza mágica personalizada',       v: 'Revela el diseño con el calor', p: '$12.900' },
+    { img: 'almohadon',            n: 'Almohadón sublimado 40×40',       v: 'Con foto, logo o frase', p: '$17.900' },
+    { img: 'mouse-pad',            n: 'Mouse pad personalizado',         v: 'Estándar y gamer', p: 'desde $7.900' },
+    { img: 'botella-deportiva',    n: 'Botella deportiva personalizada', v: '750 ml · 3 colores', p: '$18.900' },
+    { img: 'termo-acero',          n: 'Termo de acero personalizado',    v: '750 ml y 1 litro', p: 'desde $28.900' },
   ]},
   { grupo: 'Servicios sobre tu prenda', items: [
-    { img: 'bordado-de-logo',      n: 'Bordado de logo',                 v: 'Hasta 8 cm, 15 cm o espalda completa' },
-    { img: 'estampado-dtf',        n: 'Estampado DTF',                   v: 'A5, A4 o A3' },
-    { img: 'vinilo-textil',        n: 'Vinilo textil',                   v: 'Nombres, números y logos' },
-    { img: 'diseno-vectorizacion', n: 'Diseño y vectorización de logo',  v: 'Vectorizar, rediseñar o crear' },
-    { img: 'sena-pedido',          n: 'Seña de pedido',                  v: 'Para pedidos ya presupuestados' },
+    { img: 'bordado-de-logo',      n: 'Bordado de logo',                 v: 'Hasta 8 cm, 15 cm o espalda completa', p: 'desde $6.900' },
+    { img: 'estampado-dtf',        n: 'Estampado DTF',                   v: 'A5, A4 o A3', p: 'desde $5.900' },
+    { img: 'vinilo-textil',        n: 'Vinilo textil',                   v: 'Nombres, números y logos', p: 'desde $4.900' },
+    { img: 'diseno-vectorizacion', n: 'Diseño y vectorización de logo',  v: 'Vectorizar, rediseñar o crear', p: 'desde $17.900' },
+    { img: 'sena-pedido',          n: 'Seña de pedido',                  v: 'Para pedidos ya presupuestados', p: '$20.000' },
   ]},
 ];

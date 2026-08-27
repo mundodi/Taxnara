@@ -15,6 +15,31 @@ import path from 'path';
 const TINTA = '#15171C';
 const CIAN  = '#0F7C88';
 const CIAN_CLARO = '#7FD3DC';   // acento sobre fondos oscuros
+
+/** Colores reales de las prendas: [relleno, contorno, acento]. */
+const COLORES = {
+  'Blanco':        ['#FFFFFF', '#A3AEB1', CIAN],
+  'Negro':         ['#24272A', '#141618', CIAN_CLARO],
+  'Gris melange':  ['#B7BEC1', '#8B9497', '#0A5C66'],
+  'Beige':         ['#DBCDB6', '#B0A084', '#0A5C66'],
+  'Azul marino':   ['#263C5D', '#16263D', CIAN_CLARO],
+  'Azul':          ['#2E6FA8', '#1D4A73', CIAN_CLARO],
+  'Rojo':          ['#B3202B', '#7C1219', CIAN_CLARO],
+  'Acero':         ['#C6CCCF', '#8E9699', '#0A5C66'],
+};
+
+/** Qué producto se ofrece en qué colores. */
+const VARIANTES_COLOR = {
+  'remera':               ['Blanco', 'Negro', 'Gris melange'],
+  'remera-oversize':      ['Blanco', 'Negro', 'Gris melange'],
+  'buzo-canguro':         ['Negro', 'Gris melange', 'Beige'],
+  'buzo-cuello-redondo':  ['Negro', 'Gris melange', 'Beige'],
+  'campera-rompevientos': ['Negro', 'Azul marino', 'Rojo'],
+  'chomba-pique':         ['Blanco', 'Negro', 'Azul marino'],
+  'gorra':                ['Negro', 'Blanco', 'Beige', 'Azul marino'],
+  'botella-deportiva':    ['Blanco', 'Negro', 'Azul'],
+  'termo-acero':          ['Acero', 'Negro'],
+};
 const SALIDA = path.join(path.dirname(new URL(import.meta.url).pathname), 'productos');
 
 /** Marca de registro de imprenta: señala el punto de personalización. */
@@ -158,18 +183,21 @@ const PRODUCTOS = [
    reg(126, 128, 14)],
 ];
 
-const svg = (cuerpo, acento, texto = '', { fondo = true, trazo = TINTA, marca = CIAN } = {}) =>
+const svg = (cuerpo, acento, texto = '',
+             { fondo = true, trazo = TINTA, marca = CIAN, relleno = 'none' } = {}) =>
 `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 200 200">
   ${fondo ? '<rect width="200" height="200" fill="#FFFFFF"/>' : ''}
-  <g fill="none" stroke="${trazo}" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">${cuerpo}</g>
+  <g fill="${relleno}" stroke="${trazo}" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">${cuerpo}</g>
   <g fill="none" stroke="${marca}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">${acento}</g>
   <g fill="${marca}" font-family="Archivo, Arial Black, sans-serif" font-weight="800"
      text-anchor="middle" dominant-baseline="central">${texto}</g>
 </svg>`;
 
 const SALIDA_OSC = SALIDA + '-oscuro';
+const SALIDA_COL = SALIDA + '-color';
 fs.mkdirSync(SALIDA, { recursive: true });
 fs.mkdirSync(SALIDA_OSC, { recursive: true });
+fs.mkdirSync(SALIDA_COL, { recursive: true });
 const navegador = await chromium.launch();
 const pagina = await navegador.newPage({ viewport: { width: 1200, height: 1200 } });
 
@@ -185,9 +213,21 @@ for (const [nombre, cuerpo, acento, texto] of PRODUCTOS) {
     svg(cuerpo, acento, texto, { fondo: false, trazo: '#FFFFFF', marca: CIAN_CLARO }));
   await pagina.screenshot({ path: path.join(SALIDA_OSC, `${nombre}.png`), omitBackground: true });
 
-  process.stdout.write(`· ${nombre}\n`);
+  // 3) una por cada color que se ofrece, con el relleno real de la prenda
+  const colores = VARIANTES_COLOR[nombre] || [];
+  for (const color of colores) {
+    const [relleno, trazo, marca] = COLORES[color];
+    await pagina.setContent(
+      `<style>html,body{margin:0;padding:0;background:#fff}svg{display:block}</style>` +
+      svg(cuerpo, acento, texto, { trazo, marca, relleno }));
+    const archivo = `${nombre}-${color.toLowerCase().replace(/ /g, '-')}.png`;
+    await pagina.screenshot({ path: path.join(SALIDA_COL, archivo) });
+  }
+
+  process.stdout.write(`· ${nombre}${colores.length ? ` (+${colores.length} colores)` : ''}\n`);
 }
 
 await navegador.close();
 console.log(`\n${PRODUCTOS.length} imágenes en ${SALIDA}`);
 console.log(`${PRODUCTOS.length} en versión clara (fondos oscuros) en ${SALIDA_OSC}`);
+console.log(`${fs.readdirSync(SALIDA_COL).length} en color real en ${SALIDA_COL}`);

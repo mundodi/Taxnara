@@ -11,8 +11,9 @@ más identidad, textos, políticas legales, envíos, pagos y SEO listos para peg
 > **Todo está despublicado**: nadie lo ve ni lo puede comprar todavía. Falta
 > ponerle los precios reales y las fotos, y recién ahí publicar.
 >
-> Está cargado como **catálogo de exhibición: con imagen y sin precio**, porque
-> Taxnara cotiza a medida. Cada ficha cierra invitando a pedir presupuesto.
+> Los **precios están cargados**, comparados contra la competencia y con escalas por
+> cantidad. El detalle del relevamiento está en
+> [`docs/12-precios-y-mercado.md`](docs/12-precios-y-mercado.md).
 >
 > El detalle completo está en [`docs/10-estado-de-la-tienda.md`](docs/10-estado-de-la-tienda.md).
 
@@ -41,6 +42,7 @@ No hace falta saber programar: todo se carga desde el administrador.
 | [`docs/09-pedidos-personalizados.md`](docs/09-pedidos-personalizados.md) | El flujo del trabajo a medida dentro de una tienda online |
 | [`docs/10-estado-de-la-tienda.md`](docs/10-estado-de-la-tienda.md) | **Qué quedó cargado en la tienda y qué falta** |
 | [`docs/11-la-pagina-web.md`](docs/11-la-pagina-web.md) | **La página web: cómo editarla y publicarla** |
+| [`docs/12-precios-y-mercado.md`](docs/12-precios-y-mercado.md) | **Precios, comparación con la competencia y márgenes** |
 | [`import/productos-taxnara.csv`](import/productos-taxnara.csv) | El mismo catálogo en CSV, como respaldo |
 | [`brand/tokens.css`](brand/tokens.css) | Colores y tipografías en un solo lugar |
 | [`sitio/`](sitio) | **La página web**, lista para publicar |
@@ -58,7 +60,9 @@ Facebook y TikTok). Están marcados en todos los archivos como `⟨COMPLETAR⟩`
 - **Teléfono / WhatsApp de ventas**
 - **CUIT y razón social** (obligatorio para facturar y para los Términos)
 - **Mail de contacto** de la tienda
-- **Fotos reales** → las del catálogo son ilustraciones provisorias
+- **Fotos reales** → las del catálogo son ilustraciones provisorias.
+  Sin fotos de verdad, los precios cargados no se sostienen (ver doc 12)
+- **Validar los precios contra tus costos** → están anclados al mercado, no a tu margen
 - **Fotos de producto** → las mejores ya están en el feed de Instagram
 
 ---

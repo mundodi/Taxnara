@@ -4,7 +4,7 @@ Registro de lo que quedó **efectivamente cargado** en la Tiendanube de Taxnara.
 
 - **Tienda:** [taxnara.mitiendanube.com](https://taxnara.mitiendanube.com)
 - **Fecha de carga:** 27 de agosto de 2026
-- **Modo:** catálogo de exhibición — **con imagen y sin precio**
+- **Modo:** catálogo con imagen y **precio cargado** (ver [doc 12](12-precios-y-mercado.md))
 - **Medios de pago detectados:** Pago Nube activo (tarjeta de crédito, débito,
   transferencia y billetera)
 
@@ -27,53 +27,55 @@ Todas visibles. La categoría *Ofertas* del plan no se creó: sin promociones
 activas, una categoría vacía en el menú resta más de lo que suma. Se crea el día
 que haya algo adentro.
 
-### 22 productos, 148 variantes — todos con imagen y sin precio
+### 22 productos, 148 variantes — con imagen y precio
 
 Cada uno con **imagen, descripción, SEO, marca, peso, medidas, SKU y categorías**.
 El peso y las medidas están cargados en cada variante para que el cálculo de envío
 funcione bien el día que se activen las ventas.
 
-| Producto | Variantes | Precio |
-|---|---|---|
-| Remera de algodón personalizada | 15 | Consultar |
-| Remera oversize personalizada | 12 | Consultar |
-| Buzo canguro personalizado | 15 | Consultar |
-| Buzo cuello redondo personalizado | 15 | Consultar |
-| Campera rompevientos bordada | 15 | Consultar |
-| Chomba piqué con logo bordado | 15 | Consultar |
-| Gorra de gabardina bordada | 4 | Consultar |
-| Kit egresados — buzo bordado + nombre | 15 | Consultar |
-| Taza de cerámica sublimada | 1 | Consultar |
-| Taza mágica personalizada | 1 | Consultar |
-| Almohadón sublimado 40×40 | 3 | Consultar |
-| Mouse pad personalizado | 2 | Consultar |
-| Botella deportiva personalizada | 3 | Consultar |
-| Termo de acero personalizado | 4 | Consultar |
-| Set de regalería empresarial | 3 | Consultar |
-| Indumentaria laboral bordada | 4 | Consultar |
-| Camiseta de club sublimada | 8 | Consultar |
-| Bordado de logo (sobre tu prenda) | 3 | Consultar |
-| Estampado DTF (sobre tu prenda) | 3 | Consultar |
-| Vinilo textil | 3 | Consultar |
-| Diseño y vectorización de logo | 3 | Consultar |
-| **Seña de pedido personalizado** | 1 | **$20.000** ⟨revisar⟩ |
+| Producto | Variantes |
+|---|---|
+| Remera de algodón personalizada | 15 |
+| Remera oversize personalizada | 12 |
+| Buzo canguro personalizado | 15 |
+| Buzo cuello redondo personalizado | 15 |
+| Campera rompevientos bordada | 15 |
+| Chomba piqué con logo bordado | 15 |
+| Gorra de gabardina bordada | 4 |
+| Kit egresados — buzo bordado + nombre | 15 |
+| Taza de cerámica sublimada | 1 |
+| Taza mágica personalizada | 1 |
+| Almohadón sublimado 40×40 | 3 |
+| Mouse pad personalizado | 2 |
+| Botella deportiva personalizada | 3 |
+| Termo de acero personalizado | 4 |
+| Set de regalería empresarial | 3 |
+| Indumentaria laboral bordada | 4 |
+| Camiseta de club sublimada | 8 |
+| Bordado de logo (sobre tu prenda) | 3 |
+| Estampado DTF (sobre tu prenda) | 3 |
+| Vinilo textil | 3 |
+| Diseño y vectorización de logo | 3 |
+| Seña de pedido personalizado | 1 |
 
-**Por qué sin precio.** Taxnara trabaja a medida: el precio real depende de la
-cantidad, la técnica y el diseño. Publicar una lista fija genera reclamos, no ventas.
-Como catálogo de exhibición, la tienda se puede mostrar hoy sin inventar números.
+**Los precios están en [`12-precios-y-mercado.md`](12-precios-y-mercado.md)**, con la
+comparación contra la competencia y el método para validar tu margen.
 
-Cada descripción termina con la misma línea: *"Precio a consultar. Escribinos por
-WhatsApp con la cantidad y el diseño y te pasamos el presupuesto en el día."*
 
-**La única excepción es la seña**, que sí tiene precio porque es un medio de pago,
-no un artículo de vitrina: es lo que permite cobrar un anticipo de un pedido ya
-presupuestado. Lleva el tag `REVISAR MONTO`.
+Cada descripción cierra indicando **qué incluye el precio** y la **escala de descuento
+por cantidad** (−5% desde 10 u., −10% desde 25, −15% desde 50).
+
+La **seña** es el único producto que no es un artículo de venta: cada unidad equivale a
+$20.000 de anticipo sobre un pedido ya presupuestado. Lleva el tag `REVISAR MONTO`.
 
 ### Las imágenes
 
-Los 22 productos tienen imagen de exhibición: ilustración limpia sobre fondo blanco,
-1200×1200, en un solo estilo, con **el punto de personalización marcado en cian**
-(dónde iría el logo del cliente).
+Los 22 productos tienen imagen: ilustración limpia sobre fondo blanco, 1200×1200, en un
+solo estilo, con **el punto de personalización marcado en cian** (dónde iría el logo).
+
+Además hay **27 versiones en los colores reales** de cada prenda en
+[`img/productos-color/`](../img/productos-color) — todavía **no están cargadas en la
+tienda**: se suben desde el panel arrastrándolas a cada producto.
 
 Las genera [`img/generar_imagenes.mjs`](../img/generar_imagenes.mjs) y quedan en
 [`img/productos/`](../img/productos). Tiendanube las descargó y las rehospedó en su
